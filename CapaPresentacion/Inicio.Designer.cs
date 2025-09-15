@@ -61,7 +61,7 @@
             this.menusalir});
             this.menu.Location = new System.Drawing.Point(0, 48);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(800, 73);
+            this.menu.Size = new System.Drawing.Size(944, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -185,7 +185,7 @@
             this.menuTitulo.Location = new System.Drawing.Point(0, 0);
             this.menuTitulo.Name = "menuTitulo";
             this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitulo.Size = new System.Drawing.Size(800, 48);
+            this.menuTitulo.Size = new System.Drawing.Size(944, 48);
             this.menuTitulo.TabIndex = 1;
             this.menuTitulo.Text = "menuStrip2";
             // 
@@ -206,7 +206,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 121);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(800, 329);
+            this.contenedor.Size = new System.Drawing.Size(944, 480);
             this.contenedor.TabIndex = 3;
             // 
             // lbluser
@@ -215,7 +215,7 @@
             this.lbluser.BackColor = System.Drawing.Color.MidnightBlue;
             this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(580, 19);
+            this.lbluser.Location = new System.Drawing.Point(688, 19);
             this.lbluser.Name = "lbluser";
             this.lbluser.Size = new System.Drawing.Size(67, 16);
             this.lbluser.TabIndex = 4;
@@ -227,7 +227,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.MidnightBlue;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(653, 19);
+            this.lblusuario.Location = new System.Drawing.Point(761, 19);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(75, 16);
             this.lblusuario.TabIndex = 5;
@@ -257,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(944, 601);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.lbluser);
             this.Controls.Add(this.contenedor);
