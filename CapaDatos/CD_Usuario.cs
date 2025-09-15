@@ -19,7 +19,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select, id_usuario, dni, nombre, apellido, email, contrasena, estado from usuario";
+                    string query = "select id_usuario, dni, nombre, apellido, email, contrasena, estado from usuario";
 
                     SqlCommand cmd = new SqlCommand(query, oConexion);
 

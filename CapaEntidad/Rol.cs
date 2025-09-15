@@ -9,7 +9,7 @@ namespace CapaEntidad
     public class Rol
     {
         public int ID_rol { get; set; }
-        public string nombre_rol { get; set; }
+        public string nombre_menu { get; set; }
 
     }
 }
