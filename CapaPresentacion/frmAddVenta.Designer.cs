@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,6 +68,8 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.BGuardar = new FontAwesome.Sharp.IconButton();
+            this.BEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -308,7 +310,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(104, 19);
+            this.textBox4.Location = new System.Drawing.Point(120, 11);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(29, 20);
             this.textBox4.TabIndex = 30;
@@ -331,9 +333,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 16);
+            this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 24;
-            this.label7.Text = "Cod Producto:";
+            this.label7.Text = "Buscar Producto:";
             // 
             // textBox3
             // 
@@ -346,15 +348,15 @@
             // 
             this.dvgdata.AllowUserToAddRows = false;
             this.dvgdata.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dvgdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Cliente,
@@ -367,9 +369,9 @@
             this.dvgdata.MultiSelect = false;
             this.dvgdata.Name = "dvgdata";
             this.dvgdata.ReadOnly = true;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dvgdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dvgdata.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dvgdata.RowTemplate.Height = 30;
             this.dvgdata.Size = new System.Drawing.Size(641, 238);
             this.dvgdata.TabIndex = 31;
@@ -470,12 +472,54 @@
             this.label13.TabIndex = 42;
             this.label13.Text = "Cambio:";
             // 
+            // BGuardar
+            // 
+            this.BGuardar.BackColor = System.Drawing.Color.SeaGreen;
+            this.BGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardar.ForeColor = System.Drawing.Color.White;
+            this.BGuardar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.BGuardar.IconColor = System.Drawing.Color.White;
+            this.BGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BGuardar.IconSize = 16;
+            this.BGuardar.Location = new System.Drawing.Point(612, 448);
+            this.BGuardar.Name = "BGuardar";
+            this.BGuardar.Size = new System.Drawing.Size(149, 26);
+            this.BGuardar.TabIndex = 43;
+            this.BGuardar.Text = "Guardar";
+            this.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BGuardar.UseVisualStyleBackColor = false;
+            // 
+            // BEliminar
+            // 
+            this.BEliminar.BackColor = System.Drawing.Color.Maroon;
+            this.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminar.ForeColor = System.Drawing.Color.White;
+            this.BEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.BEliminar.IconColor = System.Drawing.Color.White;
+            this.BEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BEliminar.IconSize = 16;
+            this.BEliminar.Location = new System.Drawing.Point(435, 451);
+            this.BEliminar.Name = "BEliminar";
+            this.BEliminar.Size = new System.Drawing.Size(149, 23);
+            this.BEliminar.TabIndex = 44;
+            this.BEliminar.Text = "Cancelar";
+            this.BEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEliminar.UseVisualStyleBackColor = false;
+            // 
             // frmAddVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(783, 450);
+            this.ClientSize = new System.Drawing.Size(778, 486);
+            this.Controls.Add(this.BEliminar);
+            this.Controls.Add(this.BGuardar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -542,5 +586,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label13;
+        private FontAwesome.Sharp.IconButton BGuardar;
+        private FontAwesome.Sharp.IconButton BEliminar;
     }
 }
