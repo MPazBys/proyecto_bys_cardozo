@@ -16,5 +16,92 @@ namespace CapaNegocio
         {
             return objcd_usuario.Listar();
         }
+
+        public int registrar(Usuario obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (obj.dni == "")
+            {
+                Mensaje += "Es necesario el documento del usuario\n";
+            }
+
+            if (obj.nombre == "") {
+                Mensaje += "Es necesario el nombre del usuario\n";
+            }
+
+            if (obj.apellido == "")
+            {
+                Mensaje += "Es necesario el apellido del usuario\n";
+            }
+
+            if (obj.email == "")
+            {
+                Mensaje += "Es necesario el correo del usuario\n";
+            }
+
+            if (obj.contrasena == "")
+            {
+                Mensaje += "Es necesario la contraseña del usuario\n";
+            }
+
+            if (Mensaje != string.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+                return objcd_usuario.registrar(obj, out Mensaje);
+            }
+        }
+
+        public bool editar(Usuario obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (obj.dni == "")
+            {
+                Mensaje += "Es necesario el documento del usuario\n";
+            }
+
+            if (obj.nombre == "")
+            {
+                Mensaje += "Es necesario el nombre del usuario\n";
+            }
+
+            if (obj.apellido == "")
+            {
+                Mensaje += "Es necesario el apellido del usuario\n";
+            }
+
+            if (obj.email == "")
+            {
+                Mensaje += "Es necesario el correo del usuario\n";
+            }
+
+            if (obj.contrasena == "")
+            {
+                Mensaje += "Es necesario la contraseña del usuario\n";
+            }
+
+            if (Mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return objcd_usuario.editar(obj, out Mensaje);
+            }
+        }
+
+        public bool activar(Usuario obj, out string Mensaje)
+        {
+            return objcd_usuario.activar(obj, out Mensaje);
+        }
+
+        public bool desactivar(Usuario obj, out string Mensaje)
+        {
+            return objcd_usuario.desactivar(obj, out Mensaje);
+        }
     }
 }

@@ -62,7 +62,6 @@ namespace CapaPresentacion
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.White;
 
             //agregamos el form al contenedor
             contenedor.Controls.Add(formulario);
@@ -103,7 +102,24 @@ namespace CapaPresentacion
 
         private void menureportes_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new frmReportes());
+
+            if (usuarioActual.oRol.nombre_rol == "VENDEDOR")
+            {
+                abrirFormulario((IconMenuItem)sender, new frmReporteVendedor());
+            }
+            else if (usuarioActual.oRol.nombre_rol == "ADMINISTRADOR")
+            {
+                abrirFormulario((IconMenuItem)sender, new frmReporteAdmin());
+            }
+            else if (usuarioActual.oRol.nombre_rol == "GERENTE")
+            {
+                abrirFormulario((IconMenuItem)sender, new frmReporteGerente());
+            }
+        }
+
+        private void menubackup_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((IconMenuItem)sender, new frmBackup());
         }
     }
 }

@@ -17,7 +17,7 @@ namespace CapaEntidad
         public string usuario { get; set; }
         public Rol oRol { get; set; }
         public bool estado { get; set; }
-        public string fecha_nacimiento { get; set; }
+        public DateTime fecha_nacimiento { get; set; }
         public string sexo { get; set; }
 
     }

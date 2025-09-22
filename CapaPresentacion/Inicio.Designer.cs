@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.menuusuarios = new FontAwesome.Sharp.IconMenuItem();
-            this.menubackup = new FontAwesome.Sharp.IconMenuItem();
-            this.menuventas = new FontAwesome.Sharp.IconMenuItem();
-            this.menuproductos = new FontAwesome.Sharp.IconMenuItem();
-            this.menucategoria = new FontAwesome.Sharp.IconMenuItem();
-            this.menulibros = new FontAwesome.Sharp.IconMenuItem();
-            this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
-            this.menureportes = new FontAwesome.Sharp.IconMenuItem();
-            this.menusalir = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.LTitulo = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.lbluser = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
+            this.menuusuarios = new FontAwesome.Sharp.IconMenuItem();
+            this.menubackup = new FontAwesome.Sharp.IconMenuItem();
+            this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.menuregistrarventa = new FontAwesome.Sharp.IconMenuItem();
             this.menuverdetalle = new FontAwesome.Sharp.IconMenuItem();
+            this.menuproductos = new FontAwesome.Sharp.IconMenuItem();
+            this.menucategoria = new FontAwesome.Sharp.IconMenuItem();
+            this.menulibros = new FontAwesome.Sharp.IconMenuItem();
+            this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
+            this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,13 +56,67 @@
             this.menuventas,
             this.menuproductos,
             this.menuclientes,
-            this.menureportes,
-            this.menusalir});
+            this.menureportes});
             this.menu.Location = new System.Drawing.Point(0, 48);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(944, 73);
+            this.menu.Size = new System.Drawing.Size(1187, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
+            // 
+            // menuTitulo
+            // 
+            this.menuTitulo.AutoSize = false;
+            this.menuTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.menuTitulo.Location = new System.Drawing.Point(0, 0);
+            this.menuTitulo.Name = "menuTitulo";
+            this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuTitulo.Size = new System.Drawing.Size(1187, 48);
+            this.menuTitulo.TabIndex = 1;
+            this.menuTitulo.Text = "menuStrip2";
+            // 
+            // LTitulo
+            // 
+            this.LTitulo.AutoSize = true;
+            this.LTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.LTitulo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTitulo.ForeColor = System.Drawing.Color.White;
+            this.LTitulo.Location = new System.Drawing.Point(12, 9);
+            this.LTitulo.Name = "LTitulo";
+            this.LTitulo.Size = new System.Drawing.Size(198, 31);
+            this.LTitulo.TabIndex = 2;
+            this.LTitulo.Text = "Libreria MyP";
+            // 
+            // contenedor
+            // 
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(0, 121);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1187, 540);
+            this.contenedor.TabIndex = 3;
+            // 
+            // lbluser
+            // 
+            this.lbluser.AutoSize = true;
+            this.lbluser.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.ForeColor = System.Drawing.Color.White;
+            this.lbluser.Location = new System.Drawing.Point(939, 19);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(65, 16);
+            this.lbluser.TabIndex = 4;
+            this.lbluser.Text = "Usuario:";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.ForeColor = System.Drawing.Color.White;
+            this.lblusuario.Location = new System.Drawing.Point(1012, 19);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(75, 16);
+            this.lblusuario.TabIndex = 5;
+            this.lblusuario.Text = "lblusuario";
             // 
             // menuusuarios
             // 
@@ -89,6 +142,7 @@
             this.menubackup.Size = new System.Drawing.Size(80, 69);
             this.menubackup.Text = "Back Up";
             this.menubackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menubackup.Click += new System.EventHandler(this.menubackup_Click);
             // 
             // menuventas
             // 
@@ -104,6 +158,26 @@
             this.menuventas.Size = new System.Drawing.Size(80, 69);
             this.menuventas.Text = "Ventas";
             this.menuventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // menuregistrarventa
+            // 
+            this.menuregistrarventa.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuregistrarventa.IconColor = System.Drawing.Color.Black;
+            this.menuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuregistrarventa.Name = "menuregistrarventa";
+            this.menuregistrarventa.Size = new System.Drawing.Size(128, 22);
+            this.menuregistrarventa.Text = "Registrar";
+            this.menuregistrarventa.Click += new System.EventHandler(this.menuregistrarventa_Click);
+            // 
+            // menuverdetalle
+            // 
+            this.menuverdetalle.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuverdetalle.IconColor = System.Drawing.Color.Black;
+            this.menuverdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuverdetalle.Name = "menuverdetalle";
+            this.menuverdetalle.Size = new System.Drawing.Size(128, 22);
+            this.menuverdetalle.Text = "Ver detalle";
+            this.menuverdetalle.Click += new System.EventHandler(this.menuverdetalle_Click);
             // 
             // menuproductos
             // 
@@ -126,7 +200,7 @@
             this.menucategoria.IconColor = System.Drawing.Color.Black;
             this.menucategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menucategoria.Name = "menucategoria";
-            this.menucategoria.Size = new System.Drawing.Size(180, 22);
+            this.menucategoria.Size = new System.Drawing.Size(130, 22);
             this.menucategoria.Text = "Categorias";
             this.menucategoria.Click += new System.EventHandler(this.menucategoria_Click);
             // 
@@ -136,7 +210,7 @@
             this.menulibros.IconColor = System.Drawing.Color.Black;
             this.menulibros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menulibros.Name = "menulibros";
-            this.menulibros.Size = new System.Drawing.Size(180, 22);
+            this.menulibros.Size = new System.Drawing.Size(130, 22);
             this.menulibros.Text = "Libros";
             this.menulibros.Click += new System.EventHandler(this.menulibros_Click);
             // 
@@ -166,98 +240,11 @@
             this.menureportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menureportes.Click += new System.EventHandler(this.menureportes_Click);
             // 
-            // menusalir
-            // 
-            this.menusalir.AutoSize = false;
-            this.menusalir.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.menusalir.IconColor = System.Drawing.Color.Black;
-            this.menusalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menusalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menusalir.Name = "menusalir";
-            this.menusalir.Size = new System.Drawing.Size(80, 69);
-            this.menusalir.Text = "Salir";
-            this.menusalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // menuTitulo
-            // 
-            this.menuTitulo.AutoSize = false;
-            this.menuTitulo.BackColor = System.Drawing.Color.MidnightBlue;
-            this.menuTitulo.Location = new System.Drawing.Point(0, 0);
-            this.menuTitulo.Name = "menuTitulo";
-            this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitulo.Size = new System.Drawing.Size(944, 48);
-            this.menuTitulo.TabIndex = 1;
-            this.menuTitulo.Text = "menuStrip2";
-            // 
-            // LTitulo
-            // 
-            this.LTitulo.AutoSize = true;
-            this.LTitulo.BackColor = System.Drawing.Color.MidnightBlue;
-            this.LTitulo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.ForeColor = System.Drawing.Color.White;
-            this.LTitulo.Location = new System.Drawing.Point(12, 9);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(198, 31);
-            this.LTitulo.TabIndex = 2;
-            this.LTitulo.Text = "Libreria MyP";
-            // 
-            // contenedor
-            // 
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(0, 121);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(944, 480);
-            this.contenedor.TabIndex = 3;
-            // 
-            // lbluser
-            // 
-            this.lbluser.AutoSize = true;
-            this.lbluser.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(688, 19);
-            this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(67, 16);
-            this.lbluser.TabIndex = 4;
-            this.lbluser.Text = "Usuario:";
-            // 
-            // lblusuario
-            // 
-            this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(761, 19);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(75, 16);
-            this.lblusuario.TabIndex = 5;
-            this.lblusuario.Text = "lblusuario";
-            // 
-            // menuregistrarventa
-            // 
-            this.menuregistrarventa.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuregistrarventa.IconColor = System.Drawing.Color.Black;
-            this.menuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuregistrarventa.Name = "menuregistrarventa";
-            this.menuregistrarventa.Size = new System.Drawing.Size(180, 22);
-            this.menuregistrarventa.Text = "Registrar";
-            this.menuregistrarventa.Click += new System.EventHandler(this.menuregistrarventa_Click);
-            // 
-            // menuverdetalle
-            // 
-            this.menuverdetalle.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuverdetalle.IconColor = System.Drawing.Color.Black;
-            this.menuverdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuverdetalle.Name = "menuverdetalle";
-            this.menuverdetalle.Size = new System.Drawing.Size(180, 22);
-            this.menuverdetalle.Text = "Ver detalle";
-            this.menuverdetalle.Click += new System.EventHandler(this.menuverdetalle_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 601);
+            this.ClientSize = new System.Drawing.Size(1187, 661);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.lbluser);
             this.Controls.Add(this.contenedor);
@@ -280,7 +267,6 @@
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.MenuStrip menuTitulo;
         private System.Windows.Forms.Label LTitulo;
-        private FontAwesome.Sharp.IconMenuItem menusalir;
         private FontAwesome.Sharp.IconMenuItem menuusuarios;
         private FontAwesome.Sharp.IconMenuItem menubackup;
         private FontAwesome.Sharp.IconMenuItem menureportes;

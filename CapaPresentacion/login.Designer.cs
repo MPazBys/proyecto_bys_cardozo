@@ -80,6 +80,7 @@
             this.textDocumento.Name = "textDocumento";
             this.textDocumento.Size = new System.Drawing.Size(209, 20);
             this.textDocumento.TabIndex = 3;
+            this.textDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextDocumento_KeyPress);
             // 
             // textContrasenia
             // 
@@ -128,7 +129,6 @@
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            
             // 
             // btnCancelar
             // 

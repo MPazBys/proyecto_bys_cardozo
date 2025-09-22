@@ -293,9 +293,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(252, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 16);
+            this.label6.Size = new System.Drawing.Size(223, 16);
             this.label6.TabIndex = 25;
-            this.label6.Text = "Nombre Cliente:";
+            this.label6.Text = "Razón Social / Nombre Cliente:";
             // 
             // label7
             // 
@@ -305,9 +305,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(21, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 16);
+            this.label7.Size = new System.Drawing.Size(98, 16);
             this.label7.TabIndex = 24;
-            this.label7.Text = "Documento Cliente:";
+            this.label7.Text = "CUIT Cliente:";
             // 
             // textBox3
             // 
