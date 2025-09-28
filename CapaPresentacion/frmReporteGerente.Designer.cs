@@ -197,7 +197,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(112, 21);
             this.dateTimePicker2.TabIndex = 75;
             this.dateTimePicker2.Value = new System.DateTime(2025, 9, 22, 15, 52, 23, 0);
-            this.dateTimePicker2.Visible = false;
             // 
             // label1
             // 
@@ -230,7 +229,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 21);
             this.dateTimePicker1.TabIndex = 72;
             this.dateTimePicker1.Value = new System.DateTime(2025, 9, 22, 15, 52, 16, 0);
-            this.dateTimePicker1.Visible = false;
             // 
             // label4
             // 

@@ -79,7 +79,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 21);
             this.dateTimePicker1.TabIndex = 55;
-            this.dateTimePicker1.Visible = false;
             // 
             // label5
             // 
@@ -111,7 +110,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(112, 21);
             this.dateTimePicker2.TabIndex = 58;
-            this.dateTimePicker2.Visible = false;
             // 
             // label2
             // 
