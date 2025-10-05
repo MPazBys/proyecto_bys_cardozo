@@ -28,119 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnbuscar = new FontAwesome.Sharp.IconButton();
-            this.cbobusqueda = new System.Windows.Forms.ComboBox();
-            this.lbllista = new System.Windows.Forms.Label();
-            this.lblbusca = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtbusqueda = new System.Windows.Forms.TextBox();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnConectar = new FontAwesome.Sharp.IconButton();
+            this.cboBD = new System.Windows.Forms.ComboBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblBD = new System.Windows.Forms.Label();
+            this.btnRuta = new FontAwesome.Sharp.IconButton();
+            this.lblRuta = new System.Windows.Forms.Label();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.btnbackup = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
-            // btnbuscar
+            // btnConectar
             // 
-            this.btnbuscar.BackColor = System.Drawing.Color.White;
-            this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnbuscar.IconColor = System.Drawing.Color.Black;
-            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnbuscar.IconSize = 16;
-            this.btnbuscar.Location = new System.Drawing.Point(431, 92);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(104, 24);
-            this.btnbuscar.TabIndex = 71;
-            this.btnbuscar.Text = "Conectar";
-            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnConectar.BackColor = System.Drawing.Color.White;
+            this.btnConectar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConectar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConectar.ForeColor = System.Drawing.Color.Black;
+            this.btnConectar.IconChar = FontAwesome.Sharp.IconChar.Plug;
+            this.btnConectar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConectar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConectar.IconSize = 16;
+            this.btnConectar.Location = new System.Drawing.Point(431, 92);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(104, 24);
+            this.btnConectar.TabIndex = 71;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConectar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConectar.UseVisualStyleBackColor = false;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
-            // cbobusqueda
+            // cboBD
             // 
-            this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(126, 95);
-            this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(168, 21);
-            this.cbobusqueda.TabIndex = 69;
+            this.cboBD.FormattingEnabled = true;
+            this.cboBD.Location = new System.Drawing.Point(126, 95);
+            this.cboBD.Name = "cboBD";
+            this.cboBD.Size = new System.Drawing.Size(279, 21);
+            this.cboBD.TabIndex = 69;
             // 
-            // lbllista
+            // lblTitulo
             // 
-            this.lbllista.BackColor = System.Drawing.Color.White;
-            this.lbllista.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbllista.Location = new System.Drawing.Point(12, 20);
-            this.lbllista.Name = "lbllista";
-            this.lbllista.Size = new System.Drawing.Size(545, 51);
-            this.lbllista.TabIndex = 68;
-            this.lbllista.Text = "Back Up";
-            this.lbllista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.BackColor = System.Drawing.Color.White;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTitulo.Location = new System.Drawing.Point(12, 20);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(545, 51);
+            this.lblTitulo.TabIndex = 68;
+            this.lblTitulo.Text = "Back Up";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblbusca
+            // lblBD
             // 
-            this.lblbusca.BackColor = System.Drawing.Color.White;
-            this.lblbusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbusca.Location = new System.Drawing.Point(12, 78);
-            this.lblbusca.Name = "lblbusca";
-            this.lblbusca.Size = new System.Drawing.Size(545, 51);
-            this.lblbusca.TabIndex = 70;
-            this.lblbusca.Text = "Base de Datos:";
-            this.lblbusca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBD.BackColor = System.Drawing.Color.White;
+            this.lblBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBD.Location = new System.Drawing.Point(12, 78);
+            this.lblBD.Name = "lblBD";
+            this.lblBD.Size = new System.Drawing.Size(545, 51);
+            this.lblBD.TabIndex = 70;
+            this.lblBD.Text = "Base de Datos:";
+            this.lblBD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // iconButton1
+            // btnRuta
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(431, 149);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(104, 24);
-            this.iconButton1.TabIndex = 74;
-            this.iconButton1.Text = "Ruta";
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnRuta.BackColor = System.Drawing.Color.White;
+            this.btnRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRuta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRuta.ForeColor = System.Drawing.Color.Black;
+            this.btnRuta.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnRuta.IconColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRuta.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnRuta.IconSize = 16;
+            this.btnRuta.Location = new System.Drawing.Point(431, 149);
+            this.btnRuta.Name = "btnRuta";
+            this.btnRuta.Size = new System.Drawing.Size(104, 24);
+            this.btnRuta.TabIndex = 74;
+            this.btnRuta.Text = "Ruta";
+            this.btnRuta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRuta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRuta.UseVisualStyleBackColor = false;
+            this.btnRuta.Click += new System.EventHandler(this.btnRuta_Click);
             // 
-            // label1
+            // lblRuta
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(545, 51);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "Ruta:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRuta.BackColor = System.Drawing.Color.White;
+            this.lblRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRuta.Location = new System.Drawing.Point(12, 135);
+            this.lblRuta.Name = "lblRuta";
+            this.lblRuta.Size = new System.Drawing.Size(545, 51);
+            this.lblRuta.TabIndex = 73;
+            this.lblRuta.Text = "Ruta:";
+            this.lblRuta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtbusqueda
+            // txtRuta
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(58, 149);
-            this.txtbusqueda.Multiline = true;
-            this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(347, 24);
-            this.txtbusqueda.TabIndex = 75;
+            this.txtRuta.Location = new System.Drawing.Point(58, 149);
+            this.txtRuta.Multiline = true;
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(347, 24);
+            this.txtRuta.TabIndex = 75;
             // 
-            // iconButton3
+            // btnbackup
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.SkyBlue;
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Black;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 16;
-            this.iconButton3.Location = new System.Drawing.Point(431, 209);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(124, 30);
-            this.iconButton3.TabIndex = 89;
-            this.iconButton3.Text = "Back Up";
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.btnbackup.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnbackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbackup.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbackup.ForeColor = System.Drawing.Color.Black;
+            this.btnbackup.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.btnbackup.IconColor = System.Drawing.Color.Black;
+            this.btnbackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbackup.IconSize = 16;
+            this.btnbackup.Location = new System.Drawing.Point(431, 209);
+            this.btnbackup.Name = "btnbackup";
+            this.btnbackup.Size = new System.Drawing.Size(124, 30);
+            this.btnbackup.TabIndex = 89;
+            this.btnbackup.Text = "Back Up";
+            this.btnbackup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbackup.UseVisualStyleBackColor = false;
+            this.btnbackup.Click += new System.EventHandler(this.btnbackup_Click);
             // 
             // frmBackup
             // 
@@ -148,16 +157,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(569, 263);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.txtbusqueda);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnbuscar);
-            this.Controls.Add(this.cbobusqueda);
-            this.Controls.Add(this.lbllista);
-            this.Controls.Add(this.lblbusca);
+            this.Controls.Add(this.btnbackup);
+            this.Controls.Add(this.txtRuta);
+            this.Controls.Add(this.btnRuta);
+            this.Controls.Add(this.lblRuta);
+            this.Controls.Add(this.btnConectar);
+            this.Controls.Add(this.cboBD);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.lblBD);
             this.Name = "frmBackup";
             this.Text = "frmBackup";
+            this.Load += new System.EventHandler(this.frmBackup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,13 +175,13 @@
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton btnbuscar;
-        private System.Windows.Forms.ComboBox cbobusqueda;
-        private System.Windows.Forms.Label lbllista;
-        private System.Windows.Forms.Label lblbusca;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtbusqueda;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnConectar;
+        private System.Windows.Forms.ComboBox cboBD;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblBD;
+        private FontAwesome.Sharp.IconButton btnRuta;
+        private System.Windows.Forms.Label lblRuta;
+        private System.Windows.Forms.TextBox txtRuta;
+        private FontAwesome.Sharp.IconButton btnbackup;
     }
 }

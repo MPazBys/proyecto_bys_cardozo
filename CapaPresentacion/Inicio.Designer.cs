@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.menuTitulo = new System.Windows.Forms.MenuStrip();
-            this.LTitulo = new System.Windows.Forms.Label();
-            this.contenedor = new System.Windows.Forms.Panel();
-            this.lbluser = new System.Windows.Forms.Label();
-            this.lblusuario = new System.Windows.Forms.Label();
             this.menuusuarios = new FontAwesome.Sharp.IconMenuItem();
             this.menubackup = new FontAwesome.Sharp.IconMenuItem();
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
@@ -44,6 +39,12 @@
             this.menulibros = new FontAwesome.Sharp.IconMenuItem();
             this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuTitulo = new System.Windows.Forms.MenuStrip();
+            this.LTitulo = new System.Windows.Forms.Label();
+            this.contenedor = new System.Windows.Forms.Panel();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.menusalir = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,67 +57,13 @@
             this.menuventas,
             this.menuproductos,
             this.menuclientes,
-            this.menureportes});
+            this.menureportes,
+            this.menusalir});
             this.menu.Location = new System.Drawing.Point(0, 48);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(1187, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
-            // 
-            // menuTitulo
-            // 
-            this.menuTitulo.AutoSize = false;
-            this.menuTitulo.BackColor = System.Drawing.Color.MidnightBlue;
-            this.menuTitulo.Location = new System.Drawing.Point(0, 0);
-            this.menuTitulo.Name = "menuTitulo";
-            this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitulo.Size = new System.Drawing.Size(1187, 48);
-            this.menuTitulo.TabIndex = 1;
-            this.menuTitulo.Text = "menuStrip2";
-            // 
-            // LTitulo
-            // 
-            this.LTitulo.AutoSize = true;
-            this.LTitulo.BackColor = System.Drawing.Color.MidnightBlue;
-            this.LTitulo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.ForeColor = System.Drawing.Color.White;
-            this.LTitulo.Location = new System.Drawing.Point(12, 9);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(198, 31);
-            this.LTitulo.TabIndex = 2;
-            this.LTitulo.Text = "Libreria MyP";
-            // 
-            // contenedor
-            // 
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(0, 121);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1187, 540);
-            this.contenedor.TabIndex = 3;
-            // 
-            // lbluser
-            // 
-            this.lbluser.AutoSize = true;
-            this.lbluser.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(939, 19);
-            this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(65, 16);
-            this.lbluser.TabIndex = 4;
-            this.lbluser.Text = "Usuario:";
-            // 
-            // lblusuario
-            // 
-            this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(1012, 19);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(75, 16);
-            this.lblusuario.TabIndex = 5;
-            this.lblusuario.Text = "lblusuario";
             // 
             // menuusuarios
             // 
@@ -240,6 +187,74 @@
             this.menureportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menureportes.Click += new System.EventHandler(this.menureportes_Click);
             // 
+            // menuTitulo
+            // 
+            this.menuTitulo.AutoSize = false;
+            this.menuTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.menuTitulo.Location = new System.Drawing.Point(0, 0);
+            this.menuTitulo.Name = "menuTitulo";
+            this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuTitulo.Size = new System.Drawing.Size(1187, 48);
+            this.menuTitulo.TabIndex = 1;
+            this.menuTitulo.Text = "menuStrip2";
+            // 
+            // LTitulo
+            // 
+            this.LTitulo.AutoSize = true;
+            this.LTitulo.BackColor = System.Drawing.Color.MidnightBlue;
+            this.LTitulo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTitulo.ForeColor = System.Drawing.Color.White;
+            this.LTitulo.Location = new System.Drawing.Point(12, 9);
+            this.LTitulo.Name = "LTitulo";
+            this.LTitulo.Size = new System.Drawing.Size(198, 31);
+            this.LTitulo.TabIndex = 2;
+            this.LTitulo.Text = "Libreria MyP";
+            // 
+            // contenedor
+            // 
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(0, 121);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1187, 540);
+            this.contenedor.TabIndex = 3;
+            // 
+            // lbluser
+            // 
+            this.lbluser.AutoSize = true;
+            this.lbluser.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.ForeColor = System.Drawing.Color.White;
+            this.lbluser.Location = new System.Drawing.Point(939, 19);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(65, 16);
+            this.lbluser.TabIndex = 4;
+            this.lbluser.Text = "Usuario:";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.ForeColor = System.Drawing.Color.White;
+            this.lblusuario.Location = new System.Drawing.Point(1012, 19);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(75, 16);
+            this.lblusuario.TabIndex = 5;
+            this.lblusuario.Text = "lblusuario";
+            // 
+            // menusalir
+            // 
+            this.menusalir.AutoSize = false;
+            this.menusalir.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.menusalir.IconColor = System.Drawing.Color.Black;
+            this.menusalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menusalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menusalir.Name = "menusalir";
+            this.menusalir.Size = new System.Drawing.Size(80, 69);
+            this.menusalir.Text = "Salir";
+            this.menusalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menusalir.Click += new System.EventHandler(this.menusalir_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +295,7 @@
         private FontAwesome.Sharp.IconMenuItem menulibros;
         private FontAwesome.Sharp.IconMenuItem menuregistrarventa;
         private FontAwesome.Sharp.IconMenuItem menuverdetalle;
+        private FontAwesome.Sharp.IconMenuItem menusalir;
     }
 }
 

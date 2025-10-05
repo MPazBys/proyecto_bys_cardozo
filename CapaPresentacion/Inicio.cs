@@ -31,6 +31,11 @@ namespace CapaPresentacion
             List<Permiso> listaPermisos = new CN_Permiso().Listar(usuarioActual.id_usuario);
 
             foreach (IconMenuItem iconMenu in menu.Items) {
+
+                //si el item es el de salir, no aplicamos el control de permisos
+                if (iconMenu.Name == "menusalir")
+                    continue;
+
                 bool encontrado = listaPermisos.Any(m => m.nombre_menu == iconMenu.Name);
 
                 if (encontrado == false)
@@ -121,5 +126,18 @@ namespace CapaPresentacion
         {
             abrirFormulario((IconMenuItem)sender, new frmBackup());
         }
+
+        private void menusalir_Click(object sender, EventArgs e)
+        {
+            
+            if (MessageBox.Show("¿Cerrar sesión y volver al inicio?",
+                                "Cerrar sesión",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+        }
+
     }
+}
 }
