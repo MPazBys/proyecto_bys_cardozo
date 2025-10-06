@@ -35,10 +35,6 @@
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.lbllista = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.lblbusca = new System.Windows.Forms.Label();
-            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
-            this.btnbuscar = new FontAwesome.Sharp.IconButton();
-            this.btnexcel = new FontAwesome.Sharp.IconButton();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +42,15 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblbusca = new System.Windows.Forms.Label();
             this.btnpdf = new FontAwesome.Sharp.IconButton();
+            this.btnexcel = new FontAwesome.Sharp.IconButton();
+            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
+            this.btnbuscar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             this.Usuario,
             this.Contrasena,
             this.Rol,
+            this.EstadoValor,
             this.Estado,
             this.Sexo,
             this.FechaNacimiento});
@@ -113,75 +115,6 @@
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(945, 265);
             this.dgvdata.TabIndex = 69;
-            // 
-            // lblbusca
-            // 
-            this.lblbusca.BackColor = System.Drawing.Color.White;
-            this.lblbusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbusca.Location = new System.Drawing.Point(12, 67);
-            this.lblbusca.Name = "lblbusca";
-            this.lblbusca.Size = new System.Drawing.Size(967, 338);
-            this.lblbusca.TabIndex = 72;
-            this.lblbusca.Text = " \r\n Buscar por:";
-            // 
-            // btnlimpiarbuscador
-            // 
-            this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
-            this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnlimpiarbuscador.IconSize = 16;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(507, 83);
-            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
-            this.btnlimpiarbuscador.Size = new System.Drawing.Size(34, 24);
-            this.btnlimpiarbuscador.TabIndex = 75;
-            this.btnlimpiarbuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnlimpiarbuscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.BackColor = System.Drawing.Color.White;
-            this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnbuscar.IconColor = System.Drawing.Color.Black;
-            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnbuscar.IconSize = 16;
-            this.btnbuscar.Location = new System.Drawing.Point(464, 83);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(37, 24);
-            this.btnbuscar.TabIndex = 74;
-            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnexcel
-            // 
-            this.btnexcel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnexcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnexcel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexcel.ForeColor = System.Drawing.Color.Green;
-            this.btnexcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnexcel.IconColor = System.Drawing.Color.Green;
-            this.btnexcel.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnexcel.IconSize = 20;
-            this.btnexcel.Location = new System.Drawing.Point(12, 418);
-            this.btnexcel.Name = "btnexcel";
-            this.btnexcel.Size = new System.Drawing.Size(250, 30);
-            this.btnexcel.TabIndex = 88;
-            this.btnexcel.Text = "Generar Reporte Excel";
-            this.btnexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnexcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnexcel.UseVisualStyleBackColor = false;
             // 
             // Documento
             // 
@@ -226,6 +159,13 @@
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
             // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
@@ -253,6 +193,16 @@
             this.FechaNacimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FechaNacimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // lblbusca
+            // 
+            this.lblbusca.BackColor = System.Drawing.Color.White;
+            this.lblbusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbusca.Location = new System.Drawing.Point(12, 67);
+            this.lblbusca.Name = "lblbusca";
+            this.lblbusca.Size = new System.Drawing.Size(967, 338);
+            this.lblbusca.TabIndex = 72;
+            this.lblbusca.Text = " \r\n Buscar por:";
+            // 
             // btnpdf
             // 
             this.btnpdf.BackColor = System.Drawing.Color.White;
@@ -273,6 +223,69 @@
             this.btnpdf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnpdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnpdf.UseVisualStyleBackColor = false;
+            this.btnpdf.Click += new System.EventHandler(this.btnpdf_Click);
+            // 
+            // btnexcel
+            // 
+            this.btnexcel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnexcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnexcel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexcel.ForeColor = System.Drawing.Color.Green;
+            this.btnexcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnexcel.IconColor = System.Drawing.Color.Green;
+            this.btnexcel.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnexcel.IconSize = 20;
+            this.btnexcel.Location = new System.Drawing.Point(12, 418);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(250, 30);
+            this.btnexcel.TabIndex = 88;
+            this.btnexcel.Text = "Generar Reporte Excel";
+            this.btnexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnexcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnexcel.UseVisualStyleBackColor = false;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
+            // 
+            // btnlimpiarbuscador
+            // 
+            this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
+            this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.White;
+            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiarbuscador.IconSize = 16;
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(507, 83);
+            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
+            this.btnlimpiarbuscador.Size = new System.Drawing.Size(34, 24);
+            this.btnlimpiarbuscador.TabIndex = 75;
+            this.btnlimpiarbuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnlimpiarbuscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
+            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.Color.White;
+            this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
+            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnbuscar.IconColor = System.Drawing.Color.Black;
+            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbuscar.IconSize = 16;
+            this.btnbuscar.Location = new System.Drawing.Point(464, 83);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(37, 24);
+            this.btnbuscar.TabIndex = 74;
+            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // frmReporteAdmin
             // 
@@ -291,6 +304,7 @@
             this.Controls.Add(this.lblbusca);
             this.Name = "frmReporteAdmin";
             this.Text = "frmReporteAdmin";
+            this.Load += new System.EventHandler(this.frmReporteAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,6 +321,7 @@
         private System.Windows.Forms.DataGridView dgvdata;
         private System.Windows.Forms.Label lblbusca;
         private FontAwesome.Sharp.IconButton btnexcel;
+        private FontAwesome.Sharp.IconButton btnpdf;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -314,9 +329,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contrasena;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private FontAwesome.Sharp.IconButton btnpdf;
     }
 }
