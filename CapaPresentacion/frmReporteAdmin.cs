@@ -28,7 +28,7 @@ namespace CapaPresentacion
 
         private void frmReporteAdmin_Load(object sender, EventArgs e)
         {
-            // Cargar datos en dgvdata y configurar cbobusqueda al inicio, similar a frmUsuarios
+            // Cargar datos en dgvdata y configurar cbobusqueda al inicio
 
             // Lógica para cargar las columnas de búsqueda en cbobusqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
@@ -36,8 +36,6 @@ namespace CapaPresentacion
                 // Solo añadir columnas visibles y que no sean el botón de selección (si existiera)
                 if (columna.Visible == true)
                 {
-                    // Asumiendo que tienes una clase OpcionCombo similar a la de frmUsuarios
-                    // En este formulario solo se necesita el nombre de la columna (Name) y el texto de la cabecera (HeaderText)
                     cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
                 }
             }
@@ -252,14 +250,8 @@ namespace CapaPresentacion
 
 
         // --- Lógica de Búsqueda y Limpieza (tomada de frmUsuarios) ---
-
-        // Se asume que las implementaciones de btnbuscar_Click y btnlimpiarbuscador_Click 
-        // son idénticas a las de frmUsuarios para manejar el filtrado del dgvdata.
-
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            // Lógica de búsqueda idéntica a la de frmUsuarios para filtrar las filas visibles en dgvdata
-            // ... (copiar el código de la función btnbuscar_Click de frmUsuarios)
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
             string textoBusqueda = txtbusqueda.Text.Trim().ToUpper();
 
@@ -303,8 +295,6 @@ namespace CapaPresentacion
 
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
-            // Lógica de limpieza idéntica a la de frmUsuarios para mostrar todas las filas
-            // ... (copiar el código de la función btnlimpiarbuscador_Click de frmUsuarios)
             txtbusqueda.Text = "";
 
             foreach (DataGridViewRow row in dgvdata.Rows)
