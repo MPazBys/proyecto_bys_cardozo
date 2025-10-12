@@ -12,8 +12,8 @@ namespace CapaEntidad
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }
-        public int dni { get; set; }
+        public long dni { get; set; }
         public bool estado { get; set; }
-        public string fecha_creacion { get; set; }
+        public DateTime fecha_creacion { get; set; }
     }
 }

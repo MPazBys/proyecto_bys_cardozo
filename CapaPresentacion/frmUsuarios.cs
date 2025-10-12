@@ -421,7 +421,6 @@ namespace CapaPresentacion
             if(!string.IsNullOrWhiteSpace(txtnombre.Text))
             {
                 txtnombre.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtnombre.Text.ToLower());
-
             }
         }
 
