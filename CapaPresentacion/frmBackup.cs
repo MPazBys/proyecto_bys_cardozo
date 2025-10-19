@@ -1,21 +1,27 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace CapaPresentacion
 {
     public partial class frmBackup : Form
     {
-        public frmBackup()
+        private static Usuario usuario;
+
+        public frmBackup(Usuario objusuarios)
         {
+            usuario = objusuarios;
+
             InitializeComponent();
         }
 
@@ -32,38 +38,34 @@ namespace CapaPresentacion
         //lista todas las bases del servidor conectado
         private void cargarBasesDeDatos()
         {
-            //se obtiene la cadena de conexion desde el archivo App.config
-            string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
-
             try
             {
+                //se obtiene la cadena de conexion desde el archivo App.config
+                string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
+
                 //intenta abrir la conexion
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
                     //consulta SQL para obtener todas las bd del servidor
-
                     SqlCommand cmd = new SqlCommand("SELECT name FROM sys.databases WHERE database_id > 4", conn);
                     SqlDataReader reader = cmd.ExecuteReader();
 
+                    cboBD.Items.Clear();
+
                     //agrega cada nombre de base al comboBox
-                    while (reader.Read()) {
+                    while (reader.Read())
+                    {
                         cboBD.Items.Add(reader["name"].ToString());
                     }
                 }
-
-                //selecciona el primer item si se cargaron bd
-                if (cboBD.Items.Count > 0)
-                    cboBD.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 // muestra mensaje si ocurre un error al cargar las bd
                 MessageBox.Show("Error al cargar las bases de datos: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,39 +152,39 @@ namespace CapaPresentacion
             string rutaBackup = txtRuta.Text;
 
             //comando sql que realiza el respaldo completo de la base
-            string query = $@"
-                            BACKUP DATABASE [{databaseName}]
-                            TO DISK = '{rutaBackup}'
-                            WITH FORMAT, INIT, NAME = 'RespaldoBD_{databaseName}', SKIP, STATS = 10;";
+            string queryBackup = $@"
+                BACKUP DATABASE [{databaseName}]
+                TO DISK = '{rutaBackup}'
+                WITH FORMAT, INIT, NAME = 'RespaldoBD_{databaseName}', SKIP, STATS = 10;";
 
-            
-            txtRuta.Clear();
-            
-            MessageBox.Show("Backup realizado correctamente", 
-                "Éxito", 
-                MessageBoxButtons.OK, 
-                MessageBoxIcon.Information);
 
             try
             {
-                //Ejecuta el comando en SQL SERVER
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    // Ejecutar el comando de backup
+                    using (SqlCommand cmd = new SqlCommand(queryBackup, conn))
                     {
                         cmd.ExecuteNonQuery();
                     }
+
+                    // Registrar el backup en la tabla 
+                    string usuarioActual = usuario.nombre + " " + usuario.apellido;
+                    CN_Backups negocioBackup = new CN_Backups();
+                    negocioBackup.RegistrarBackup(usuarioActual);
                 }
+
+                MessageBox.Show("Backup realizado y registrado correctamente.",
+                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtRuta.Clear();
             }
             catch (Exception ex)
             {
-                //Si algo falla (por permisos, ruta, etc) se muestra el error
-                MessageBox.Show("Error al realizar el backup: " + ex.Message, 
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Error al realizar el backup: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

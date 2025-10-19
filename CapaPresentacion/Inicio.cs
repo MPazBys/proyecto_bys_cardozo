@@ -124,7 +124,7 @@ namespace CapaPresentacion
 
         private void menubackup_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new frmBackup());
+            abrirFormulario((IconMenuItem)sender, new frmBackup(usuarioActual));
         }
 
         private void menusalir_Click(object sender, EventArgs e)

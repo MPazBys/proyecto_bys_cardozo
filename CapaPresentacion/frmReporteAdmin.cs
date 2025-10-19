@@ -1,26 +1,23 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaEntidad;
-using CapaNegocio;
-using CapaPresentacion.Utilidades;
-// Referencias para Excel (ClosedXML)
-using ClosedXML.Excel;
-// Referencias para PDF (iTextSharp)
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CapaPresentacion
 {
     public partial class frmReporteAdmin : Form
     {
+        private CN_ReporteAdmin reportes = new CN_ReporteAdmin();
         public frmReporteAdmin()
         {
             InitializeComponent();
@@ -28,280 +25,217 @@ namespace CapaPresentacion
 
         private void frmReporteAdmin_Load(object sender, EventArgs e)
         {
-            // Cargar datos en dgvdata y configurar cbobusqueda al inicio
-
-            // Lógica para cargar las columnas de búsqueda en cbobusqueda
-            foreach (DataGridViewColumn columna in dgvdata.Columns)
-            {
-                // Solo añadir columnas visibles y que no sean el botón de selección (si existiera)
-                if (columna.Visible == true)
-                {
-                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
-                }
-            }
-
-            cbobusqueda.DisplayMember = "Texto";
-            cbobusqueda.ValueMember = "Valor";
-            cbobusqueda.SelectedIndex = 0;
-
-            // Mostrar todos los usuarios al cargar el formulario de reporte
-            CargarUsuariosEnDataGridView();
+            CargarUltimoBackup();
+            CargarUsuariosActivosInactivos();
+            CargarUsuariosPorRol();
+            VerificarAlertaBackup();
         }
 
-        private void CargarUsuariosEnDataGridView()
+        // --- ÚLTIMO BACKUP ---
+        private void CargarUltimoBackup()
         {
-            // Limpia las filas existentes
-            dgvdata.Rows.Clear();
+            DataTable dt = reportes.ObtenerUltimoBackup();
+            DataTable backupsMes = reportes.ObtenerBackupsDelMes();
 
-            // Muestra todos los usuarios (usa la misma lógica de CN_Usuario().Listar())
-            List<Usuario> listaUsuario = new CN_Usuario().Listar();
-
-            foreach (Usuario item in listaUsuario)
+            if (dt.Rows.Count > 0)
             {
-                // Asegúrate de que los nombres de las columnas en el dgvdata coincidan
-                // con las cabeceras definidas en la imagen/descripción.
-                dgvdata.Rows.Add(new object[] {
-                    item.dni, // Columna Documento
-                    item.nombre, // Columna Nombre
-                    item.apellido, // Columna Apellido
-                    item.email, // Columna Correo
-                    item.usuario, // Columna Usuario
-                    item.contrasena, // Columna Contrasena (OJO: generalmente no se muestra)
-                    item.oRol.nombre_rol, // Columna Rol
-                    item.estado == true ? 1 : 0, //Columna EstadoValor 
-                    item.estado == true ? "Activo" : "No activo", // Columna Estado
-                    item.sexo, // Columna Sexo
-                    item.fecha_nacimiento.ToString("dd/MM/yyyy") // Columna FechaNacimiento
-                });
+                DateTime fechaBackup = Convert.ToDateTime(dt.Rows[0]["fecha_backup"]);
+                string usuario = dt.Rows[0]["usuario_backup"].ToString();
+
+                lblUltimoBackup.Text = $"Último backup: {fechaBackup:dd/MM/yyyy HH:mm} (realizado por {usuario})";
+
+                lblTotalBackups.Text = $"Total de backups en el mes: {backupsMes.Rows[0]["TotalBackups"]}";
+            }
+            else
+            {
+                lblUltimoBackup.Text = "No se registran backups aún.";
+                lblTotalBackups.Text = "";
             }
         }
 
-
-        // --- Generación de Reporte Excel (ClosedXML) ---
-        private void btnexcel_Click(object sender, EventArgs e)
+        // --- ALERTA SI NO HUBO BACKUPS EN 7 DÍAS ---
+        private void VerificarAlertaBackup()
         {
-            // Crear un DataTable con los datos visibles del DataGridView
-            DataTable dt = new DataTable();
-
-            foreach (DataGridViewColumn columna in dgvdata.Columns)
-            {
-                if (columna.Visible && columna.HeaderText != "")
-                {
-                    dt.Columns.Add(columna.HeaderText, typeof(string));
-                }
-            }
-
-            // Llenar el DataTable con filas visibles
-            foreach (DataGridViewRow fila in dgvdata.Rows)
-            {
-                if (fila.Visible)
-                {
-                    List<string> rowData = new List<string>();
-                    foreach (DataGridViewColumn columna in dgvdata.Columns)
-                    {
-                        if (columna.Visible && columna.HeaderText != "")
-                        {
-                            rowData.Add(fila.Cells[columna.Name].Value?.ToString() ?? string.Empty);
-                        }
-                    }
-                    dt.Rows.Add(rowData.ToArray());
-                }
-            }
+            DataTable dt = reportes.ObtenerUltimoBackup();
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("No hay datos visibles para generar el reporte.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblAlertaBackup.Text = "No se registran backups en el sistema.";
+                lblAlertaBackup.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
-            // Cuadro para guardar el archivo
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName = $"ReporteUsuarios_{DateTime.Now:ddMMyyyy_HHmmss}.xlsx";
-            saveFile.Filter = "Archivos Excel (*.xlsx)|*.xlsx";
+            DateTime fechaUltimoBackup = Convert.ToDateTime(dt.Rows[0]["fecha_backup"]);
+            TimeSpan diferencia = DateTime.Now - fechaUltimoBackup;
 
-            if (saveFile.ShowDialog() == DialogResult.OK)
+            if (diferencia.TotalDays > 7)
             {
-                try
-                {
-                    using (XLWorkbook wb = new XLWorkbook())
-                    {
-                        var hoja = wb.Worksheets.Add(dt, "Usuarios");
-
-                        // --- Formato de cabecera ---
-                        var rangoCabecera = hoja.RangeUsed().FirstRow();
-                        rangoCabecera.Style.Font.Bold = true;
-                        rangoCabecera.Style.Fill.BackgroundColor = XLColor.FromHtml("#2E86C1"); // Azul
-                        rangoCabecera.Style.Font.FontColor = XLColor.White;
-                        rangoCabecera.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                        // --- Bordes y tamaño ---
-                        hoja.Columns().AdjustToContents();
-                        hoja.RangeUsed().Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
-                        hoja.RangeUsed().Style.Border.InsideBorder = XLBorderStyleValues.Thin;
-
-                        wb.SaveAs(saveFile.FileName);
-                        MessageBox.Show("Reporte Excel generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al generar el Excel: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                lblAlertaBackup.Text = "No se realizó ningún backup en los últimos 7 días.";
+                lblAlertaBackup.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblAlertaBackup.Text = "Los backups se están realizando con normalidad.";
+                lblAlertaBackup.ForeColor = System.Drawing.Color.Green;
             }
         }
 
-
-
-        // --- Generación de Reporte PDF (iTextSharp) ---
-        private void btnpdf_Click(object sender, EventArgs e)
+        //  --- USUARIOS ACTIVOS / INACTIVOS ---
+        private void CargarUsuariosActivosInactivos()
         {
-            // Verificar si hay filas visibles
-            if (dgvdata.Rows.Cast<DataGridViewRow>().Count(r => r.Visible) < 1)
+            try
             {
-                MessageBox.Show("No hay datos visibles para generar el reporte PDF.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                DataTable dt = reportes.ObtenerUsuariosActivosInactivos();
+
+                // Limpia el gráfico antes de volver a cargar
+                chartUsuariosActivos.Series.Clear();
+                chartUsuariosActivos.Titles.Clear();
+                chartUsuariosActivos.Legends.Clear();
+
+                // Crea una nueva serie tipo "torta" (pie chart)
+                var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Usuarios")
+                {
+                    ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie,
+                    IsValueShownAsLabel = true
+                };
+
+                // Carga los datos al gráfico
+                foreach (DataRow fila in dt.Rows)
+                {
+                    string estado = fila["Estado"].ToString();
+                    int cantidad = Convert.ToInt32(fila["Cantidad"]);
+                    serie.Points.AddXY(estado, cantidad);
+                }
+
+                // Etiquetas personalizadas: muestra porcentaje y cantidad
+                serie.Label = "#VALX: #PERCENT{P0} (#VAL)";
+                serie.LegendText = "#VALX";
+                
+                // Agrega la serie al gráfico
+                chartUsuariosActivos.Series.Add(serie);
+
+                // Leyenda
+                var leyenda = new System.Windows.Forms.DataVisualization.Charting.Legend("Leyenda");
+                chartUsuariosActivos.Legends.Add(leyenda);
+
+                // Título
+                chartUsuariosActivos.Titles.Add("Usuarios activos e inactivos");
+
+                // Paleta de colores
+                chartUsuariosActivos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+                
+                // Asegura un área de gráfico
+                if (chartUsuariosActivos.ChartAreas.Count == 0)
+                    chartUsuariosActivos.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea());
+
+                // Fuente uniforme tamaño 9
+                Font fuente = new Font("Segoe UI", 9, FontStyle.Regular);
+
+                foreach (var titulo in chartUsuariosActivos.Titles)
+                    titulo.Font = fuente;
+
+                foreach (var legend in chartUsuariosActivos.Legends)
+                    legend.Font = fuente;
+
+                foreach (var s in chartUsuariosActivos.Series)
+                    s.Font = fuente;
+
+                foreach (var area in chartUsuariosActivos.ChartAreas)
+                {
+                    area.AxisX.LabelStyle.Font = fuente;
+                    area.AxisY.LabelStyle.Font = fuente;
+                    area.AxisX.TitleFont = fuente;
+                    area.AxisY.TitleFont = fuente;
+                }
             }
-
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName = $"ReporteUsuarios_{DateTime.Now:ddMMyyyy_HHmmss}.pdf";
-            saveFile.Filter = "Archivos PDF (*.pdf)|*.pdf";
-
-            if (saveFile.ShowDialog() == DialogResult.OK)
+            catch (Exception ex)
             {
-                try
-                {
-                    // Configuración del documento PDF
-                    Document pdfDoc = new Document(PageSize.A4.Rotate(), 25, 25, 30, 30);
-                    FileStream fs = new FileStream(saveFile.FileName, FileMode.Create, FileAccess.Write);
-                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
-
-                    pdfDoc.Open();
-
-                    // Fuentes
-                    var titleFont = FontFactory.GetFont("Arial", 16, iTextSharp.text.Font.BOLD, BaseColor.BLUE);
-                    var headerFont = FontFactory.GetFont("Arial", 9, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
-                    var bodyFont = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-
-                    // Título
-                    Paragraph title = new Paragraph("LISTA DE USUARIOS", titleFont)
-                    {
-                        Alignment = Element.ALIGN_CENTER
-                    };
-                    pdfDoc.Add(title);
-                    pdfDoc.Add(new Paragraph(" ")); // Espacio
-
-                    // Crear tabla con columnas visibles
-                    int numColumns = dgvdata.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible && c.HeaderText != "");
-                    PdfPTable pdfTable = new PdfPTable(numColumns)
-                    {
-                        WidthPercentage = 100
-                    };
-
-                    // Cabeceras
-                    foreach (DataGridViewColumn col in dgvdata.Columns)
-                    {
-                        if (col.Visible && col.HeaderText != "")
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText, headerFont))
-                            {
-                                BackgroundColor = new BaseColor(46, 134, 193),
-                                HorizontalAlignment = Element.ALIGN_CENTER,
-                                VerticalAlignment = Element.ALIGN_MIDDLE,
-                                MinimumHeight = 20f
-                            };
-                            pdfTable.AddCell(cell);
-                        }
-                    }
-
-                    // Datos
-                    foreach (DataGridViewRow row in dgvdata.Rows)
-                    {
-                        if (row.Visible)
-                        {
-                            foreach (DataGridViewColumn col in dgvdata.Columns)
-                            {
-                                if (col.Visible && col.HeaderText != "")
-                                {
-                                    PdfPCell cell = new PdfPCell(new Phrase(row.Cells[col.Name].Value?.ToString() ?? "", bodyFont))
-                                    {
-                                        HorizontalAlignment = Element.ALIGN_CENTER,
-                                        VerticalAlignment = Element.ALIGN_MIDDLE,
-                                        MinimumHeight = 18f
-                                    };
-                                    pdfTable.AddCell(cell);
-                                }
-                            }
-                        }
-                    }
-
-                    pdfDoc.Add(pdfTable);
-                    pdfDoc.Close();
-                    writer.Close();
-                    fs.Close();
-
-                    MessageBox.Show("Reporte PDF generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al generar el PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Error al cargar gráfico de usuarios activos/inactivos: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        // --- Lógica de Búsqueda y Limpieza (tomada de frmUsuarios) ---
-        private void btnbuscar_Click(object sender, EventArgs e)
+        // --- USUARIOS POR ROL ---
+        private void CargarUsuariosPorRol()
         {
-            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
-            string textoBusqueda = txtbusqueda.Text.Trim().ToUpper();
-
-            if (dgvdata.Rows.Count > 0)
+            try
             {
-                foreach (DataGridViewRow row in dgvdata.Rows)
-                {
-                    if (columnaFiltro == "Estado")
-                    {
-                        // Si el usuario busca "activo", verifica si el valor del estado es 1
-                        if (textoBusqueda == "ACTIVO")
-                        {
-                            row.Visible = Convert.ToInt32(row.Cells["EstadoValor"].Value) == 1;
-                        }
-                        // Si el usuario busca "no activo" o "no", verifica si el valor del estado es 0
-                        else if (textoBusqueda == "NO ACTIVO" || textoBusqueda == "NO")
-                        {
-                            row.Visible = Convert.ToInt32(row.Cells["EstadoValor"].Value) == 0;
-                        }
-                        else
-                        {
-                            // Si el texto no es "activo" ni "no activo", oculta la fila
-                            row.Visible = false;
-                        }
+                DataTable dt = reportes.ObtenerUsuariosPorRol();
 
-                    }
-                    else
-                    {
-                        if (row.Cells[columnaFiltro].Value != null)
-                        {
-                            row.Visible = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(textoBusqueda);
-                        }
-                        else
-                        {
-                            row.Visible = false;
-                        }
-                    }
+                // Limpia antes de volver a cargar
+                chartUsuariosPorRol.Series.Clear();
+                chartUsuariosPorRol.Titles.Clear();
+                chartUsuariosPorRol.Legends.Clear();
+
+                // Crea una serie de barras
+                var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Usuarios por Rol")
+                {
+                    ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
+                    IsValueShownAsLabel = true
+                };
+
+                // Carga los datos
+                foreach (DataRow fila in dt.Rows)
+                {
+                    string rol = fila["Rol"].ToString();
+                    int cantidad = Convert.ToInt32(fila["Cantidad"]);
+                    serie.Points.AddXY(rol, cantidad);
+                }
+
+                // Etiquetas personalizadas
+                serie.Label = "#VAL";
+
+                // Agrega la serie al gráfico
+                chartUsuariosPorRol.Series.Add(serie);
+
+                // Leyenda
+                var leyenda = new System.Windows.Forms.DataVisualization.Charting.Legend("Leyenda");
+                chartUsuariosPorRol.Legends.Add(leyenda);
+
+                // Título
+                chartUsuariosPorRol.Titles.Add("Usuarios por tipo de rol");
+
+                // Paleta colores
+                chartUsuariosPorRol.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+
+                // Asegura un área de gráfico
+                if (chartUsuariosPorRol.ChartAreas.Count == 0)
+                chartUsuariosPorRol.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea());
+
+                // Configura el área del gráfico
+                var area = chartUsuariosPorRol.ChartAreas[0];
+                area.AxisX.Title = "Rol de Usuario";
+                area.AxisY.Title = "Cantidad";
+                area.AxisX.Interval = 1;
+                area.AxisX.LabelStyle.Angle = -45;
+                area.AxisX.MajorGrid.Enabled = false;
+                area.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+
+                //Fuente uniforme tamaño 9
+                Font fuente = new Font("Segoe UI", 9, FontStyle.Regular);
+
+                foreach (var titulo in chartUsuariosPorRol.Titles)
+                    titulo.Font = fuente;
+
+                foreach (var legend in chartUsuariosPorRol.Legends)
+                    legend.Font = fuente;
+
+                foreach (var s in chartUsuariosPorRol.Series)
+                    s.Font = fuente;
+
+                foreach (var a in chartUsuariosPorRol.ChartAreas)
+                {
+                    a.AxisX.LabelStyle.Font = fuente;
+                    a.AxisY.LabelStyle.Font = fuente;
+                    a.AxisX.TitleFont = fuente;
+                    a.AxisY.TitleFont = fuente;
                 }
             }
-        }
-
-        private void btnlimpiarbuscador_Click(object sender, EventArgs e)
-        {
-            txtbusqueda.Text = "";
-
-            foreach (DataGridViewRow row in dgvdata.Rows)
+            catch (Exception ex)
             {
-                row.Visible = true;
+                MessageBox.Show("Error al cargar gráfico de usuarios por rol: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
-
