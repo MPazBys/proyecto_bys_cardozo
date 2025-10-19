@@ -251,7 +251,7 @@ namespace CapaPresentacion
 
         private void btnactivar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 1)
+            if (Convert.ToInt32(txtid.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea activar este cliente?", "Activar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

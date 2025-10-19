@@ -259,7 +259,7 @@ namespace CapaPresentacion
                         foreach (DataGridViewRow row in dgvdata.Rows)
                         {
                             // Busca la fila por el ID de usuario
-                            if (row.Cells["id_usuario"].Value.ToString() == txtid.Text)
+                            if (row.Cells["Id"].Value.ToString() == txtid.Text)
                             {
                                 // Actualiza el valor de la celda "EstadoValor" a 0
                                 row.Cells["EstadoValor"].Value = 0;
@@ -282,7 +282,7 @@ namespace CapaPresentacion
 
         private void btnactivar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 1)
+            if (Convert.ToInt32(txtid.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea activar este usuario?", "Activar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -301,7 +301,7 @@ namespace CapaPresentacion
                         foreach (DataGridViewRow row in dgvdata.Rows)
                         {
                             // Busca la fila por el ID de usuario
-                            if (row.Cells["id_usuario"].Value.ToString() == txtid.Text)
+                            if (row.Cells["Id"].Value.ToString() == txtid.Text)
                             {
                                 // Actualiza el valor de la celda "EstadoValor" a 1
                                 row.Cells["EstadoValor"].Value = 1;
