@@ -54,6 +54,8 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Detalle_venta.cs" />
     <Compile Include="Libros.cs" />
+    <Compile Include="Medio_de_pago.cs" />
+    <Compile Include="Pagos.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs" />
