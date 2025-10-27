@@ -18,6 +18,6 @@ namespace CapaEntidad
 
         // Campo para manejar el ID del elemento asociado (libro, cat, autor, etc.)
         public int IdItemAsociado { get; set; }
-
+        public string DescripcionItemAsociado { get; set; }
     }
 }

@@ -64,6 +64,7 @@
             this.IdPromocion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAsociado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +118,7 @@
             this.IdPromocion,
             this.Nombre,
             this.TipoDescuento,
+            this.ItemAsociado,
             this.ValorDescuento,
             this.FechaInicio,
             this.FechaFin,
@@ -490,35 +492,36 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
             // 
             // TipoDescuento
             // 
             this.TipoDescuento.HeaderText = "Tipo de Descuento";
             this.TipoDescuento.Name = "TipoDescuento";
             this.TipoDescuento.ReadOnly = true;
-            this.TipoDescuento.Width = 125;
+            // 
+            // ItemAsociado
+            // 
+            this.ItemAsociado.HeaderText = "Descripcion";
+            this.ItemAsociado.Name = "ItemAsociado";
+            this.ItemAsociado.ReadOnly = true;
             // 
             // ValorDescuento
             // 
             this.ValorDescuento.HeaderText = "Valor del Descuento";
             this.ValorDescuento.Name = "ValorDescuento";
             this.ValorDescuento.ReadOnly = true;
-            this.ValorDescuento.Width = 125;
             // 
             // FechaInicio
             // 
             this.FechaInicio.HeaderText = "Fecha Inicio";
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.ReadOnly = true;
-            this.FechaInicio.Width = 125;
             // 
             // FechaFin
             // 
             this.FechaFin.HeaderText = "Fecha Fin";
             this.FechaFin.Name = "FechaFin";
             this.FechaFin.ReadOnly = true;
-            this.FechaFin.Width = 125;
             // 
             // EstadoValor
             // 
@@ -534,7 +537,6 @@
             this.Estado.ReadOnly = true;
             this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Estado.Width = 125;
             // 
             // IdItemAsociado
             // 
@@ -626,6 +628,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPromocion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAsociado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;

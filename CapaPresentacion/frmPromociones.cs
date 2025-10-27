@@ -43,8 +43,12 @@ namespace CapaPresentacion
             // ======================================
             // 2. Configuración de ComboBox de Búsqueda
             // ======================================
-            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "Nombre", Texto = "Nombre" }); // Nota: Ajustado a "Nombre" para coincidir con la columna
-            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "TipoDescuento", Texto = "Tipo de Descuento" }); // Nota: Ajustado a "TipoDescuento" para coincidir con la columna
+            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "Nombre", Texto = "Nombre" });
+            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "TipoDescuento", Texto = "Tipo de Descuento" });
+
+            // AÑADIR NUEVA OPCIÓN DE BÚSQUEDA:
+            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "ItemAsociado", Texto = "Item Asociado" });
+
             cboBusqueda.DisplayMember = "Texto";
             cboBusqueda.ValueMember = "Valor";
             cboBusqueda.SelectedIndex = 0;
@@ -74,12 +78,13 @@ namespace CapaPresentacion
                     p.IdPromocion, // Índice 1: IdPromocion
                     p.Nombre, // Índice 2
                     p.Tipo, // Índice 3
-                    p.ValorDescuento, // Índice 4
-                    p.FechaInicio.ToString("d"), // Índice 5
-                    p.FechaFin.ToString("d"), // Índice 6
-                    p.Estado, // Índice 7: EstadoValor
-                    p.Estado ? "Activado" : "Desactivado", // Índice 8: Estado
-                    p.IdItemAsociado // Índice 9: IdItemAsociado 
+                    p.DescripcionItemAsociado, //Índice 4
+                    p.ValorDescuento, // Índice 5
+                    p.FechaInicio.ToString("d"), // Índice 6
+                    p.FechaFin.ToString("d"), // Índice 7
+                    p.Estado, // Índice 8: EstadoValor
+                    p.Estado ? "Activado" : "Desactivado", // Índice 9: Estado
+                    p.IdItemAsociado // Índice 10: IdItemAsociado 
                 });
             }
         }
@@ -392,29 +397,30 @@ namespace CapaPresentacion
         // =================================================================
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // El ComboBox de búsqueda es para filtrar por campos del dgv.
             if (cboBusqueda.SelectedItem == null || string.IsNullOrWhiteSpace(txtBusqueda.Text))
             {
                 MessageBox.Show("Seleccione un criterio y escriba un valor para buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string columna = ((OpcionCombo)cboBusqueda.SelectedItem).Valor.ToString();
+            // El 'Valor' será "Nombre", "TipoDescuento", o "ItemAsociado"
+            string columnaBusqueda = ((OpcionCombo)cboBusqueda.SelectedItem).Valor.ToString();
             string valor = txtBusqueda.Text.Trim().ToUpper();
 
-            // Lógica de filtrado manual en el DataGridView
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
-                if (row.Cells[columna] != null && row.Cells[columna].Value != null)
+                // 1. Obtener el valor de la columna seleccionada
+                object celda = row.Cells[columnaBusqueda]?.Value;
+                string valorFila = celda?.ToString().Trim().ToUpper() ?? string.Empty;
+
+                // 2. Aplicar el filtro de coincidencia
+                if (valorFila.Contains(valor))
                 {
-                    if (row.Cells[columna].Value.ToString().Trim().ToUpper().Contains(valor))
-                    {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
                 }
             }
         }
@@ -444,13 +450,25 @@ namespace CapaPresentacion
 
         private void FiltrarPorEstado(bool estado)
         {
-            // Iterar sobre las filas y mostrar/ocultar según el estado
+            // 1. Limpiar el campo de texto de búsqueda si no está vacío
+            if (!string.IsNullOrWhiteSpace(txtBusqueda.Text))
+            {
+                txtBusqueda.Text = "";
+                // Opcional: Reestablecer el ComboBox de búsqueda si lo tienes
+                cboBusqueda.SelectedIndex = 0; 
+            }
+
+            // 2. Iterar sobre las filas y aplicar el filtro de estado
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
-                // Asegurarse de que las filas filtradas por búsqueda anterior se muestren si cumplen el estado
+                // El row.Cells["EstadoValor"] debe ser el que contiene el valor booleano (true/false)
                 if (row.Cells["EstadoValor"] != null && row.Cells["EstadoValor"].Value != null)
                 {
-                    if (Convert.ToBoolean(row.Cells["EstadoValor"].Value) == estado)
+                    // Convert.ToBoolean es seguro si el valor es bool o string "True"/"False"
+                    bool estadoFila = Convert.ToBoolean(row.Cells["EstadoValor"].Value);
+
+                    // 3. Aplicar la visibilidad basándose ÚNICAMENTE en el estado
+                    if (estadoFila == estado)
                     {
                         row.Visible = true;
                     }
@@ -458,6 +476,11 @@ namespace CapaPresentacion
                     {
                         row.Visible = false;
                     }
+                }
+                else
+                {
+                    // Ocultar filas que no tienen valor de estado (ej: la fila de encabezado vacía)
+                    row.Visible = false;
                 }
             }
         }

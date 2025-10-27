@@ -23,7 +23,8 @@ namespace CapaDatos
                 FechaInicio = Convert.ToDateTime(dr["fecha_inicio"]),
                 FechaFin = Convert.ToDateTime(dr["fecha_fin"]),
                 Estado = Convert.ToBoolean(dr["estado"]),
-                IdItemAsociado = dr["IdItemAsociado"] != DBNull.Value ? Convert.ToInt32(dr["IdItemAsociado"]) : 0
+                IdItemAsociado = dr["IdItemAsociado"] != DBNull.Value ? Convert.ToInt32(dr["IdItemAsociado"]) : 0,
+                DescripcionItemAsociado = dr["DescripcionItemAsociado"].ToString()
             };
         }
 
