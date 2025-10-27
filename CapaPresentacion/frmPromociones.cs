@@ -47,7 +47,7 @@ namespace CapaPresentacion
             cboBusqueda.Items.Add(new OpcionCombo() { Valor = "TipoDescuento", Texto = "Tipo de Descuento" });
 
             // AÑADIR NUEVA OPCIÓN DE BÚSQUEDA:
-            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "ItemAsociado", Texto = "Item Asociado" });
+            cboBusqueda.Items.Add(new OpcionCombo() { Valor = "ItemAsociado", Texto = "Descripción" });
 
             cboBusqueda.DisplayMember = "Texto";
             cboBusqueda.ValueMember = "Valor";
