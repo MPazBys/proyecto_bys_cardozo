@@ -37,14 +37,15 @@
             this.menuproductos = new FontAwesome.Sharp.IconMenuItem();
             this.menucategoria = new FontAwesome.Sharp.IconMenuItem();
             this.menulibros = new FontAwesome.Sharp.IconMenuItem();
+            this.menupromociones = new FontAwesome.Sharp.IconMenuItem();
             this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
+            this.menusalir = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.LTitulo = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.lbluser = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
-            this.menusalir = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.menubackup,
             this.menuventas,
             this.menuproductos,
+            this.menupromociones,
             this.menuclientes,
             this.menureportes,
             this.menusalir});
@@ -161,6 +163,19 @@
             this.menulibros.Text = "Libros";
             this.menulibros.Click += new System.EventHandler(this.menulibros_Click);
             // 
+            // menupromociones
+            // 
+            this.menupromociones.AutoSize = false;
+            this.menupromociones.IconChar = FontAwesome.Sharp.IconChar.Zap;
+            this.menupromociones.IconColor = System.Drawing.Color.Black;
+            this.menupromociones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menupromociones.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menupromociones.Name = "menupromociones";
+            this.menupromociones.Size = new System.Drawing.Size(80, 69);
+            this.menupromociones.Text = "Promociones";
+            this.menupromociones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menupromociones.Click += new System.EventHandler(this.menupromociones_Click);
+            // 
             // menuclientes
             // 
             this.menuclientes.AutoSize = false;
@@ -186,6 +201,19 @@
             this.menureportes.Text = "Reportes";
             this.menureportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menureportes.Click += new System.EventHandler(this.menureportes_Click);
+            // 
+            // menusalir
+            // 
+            this.menusalir.AutoSize = false;
+            this.menusalir.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.menusalir.IconColor = System.Drawing.Color.Black;
+            this.menusalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menusalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menusalir.Name = "menusalir";
+            this.menusalir.Size = new System.Drawing.Size(80, 69);
+            this.menusalir.Text = "Salir";
+            this.menusalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menusalir.Click += new System.EventHandler(this.menusalir_Click);
             // 
             // menuTitulo
             // 
@@ -242,19 +270,6 @@
             this.lblusuario.TabIndex = 5;
             this.lblusuario.Text = "lblusuario";
             // 
-            // menusalir
-            // 
-            this.menusalir.AutoSize = false;
-            this.menusalir.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.menusalir.IconColor = System.Drawing.Color.Black;
-            this.menusalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menusalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menusalir.Name = "menusalir";
-            this.menusalir.Size = new System.Drawing.Size(80, 69);
-            this.menusalir.Text = "Salir";
-            this.menusalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menusalir.Click += new System.EventHandler(this.menusalir_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +311,7 @@
         private FontAwesome.Sharp.IconMenuItem menuregistrarventa;
         private FontAwesome.Sharp.IconMenuItem menuverdetalle;
         private FontAwesome.Sharp.IconMenuItem menusalir;
+        private FontAwesome.Sharp.IconMenuItem menupromociones;
     }
 }
 

@@ -110,7 +110,7 @@ namespace CapaPresentacion
 
             if (usuarioActual.oRol.nombre_rol == "VENDEDOR")
             {
-                abrirFormulario((IconMenuItem)sender, new frmReporteVendedor());
+                abrirFormulario((IconMenuItem)sender, new chartResumen());
             }
             else if (usuarioActual.oRol.nombre_rol == "ADMINISTRADOR")
             {
@@ -139,5 +139,10 @@ namespace CapaPresentacion
         }
 
     }
-}
+
+        private void menupromociones_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((IconMenuItem)sender, new frmPromociones());
+        }
+    }
 }

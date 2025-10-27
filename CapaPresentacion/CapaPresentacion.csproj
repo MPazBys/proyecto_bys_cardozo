@@ -134,6 +134,12 @@
     <Compile Include="frmLibro.Designer.cs">
       <DependentUpon>frmLibro.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPromociones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPromociones.Designer.cs">
+      <DependentUpon>frmPromociones.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,11 +152,11 @@
     <Compile Include="frmReporteGerente.Designer.cs">
       <DependentUpon>frmReporteGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteVendedor.cs">
+    <Compile Include="chartResumen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteVendedor.Designer.cs">
-      <DependentUpon>frmReporteVendedor.cs</DependentUpon>
+    <Compile Include="chartResumen.Designer.cs">
+      <DependentUpon>chartResumen.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -191,14 +197,17 @@
     <EmbeddedResource Include="frmLibro.resx">
       <DependentUpon>frmLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPromociones.resx">
+      <DependentUpon>frmPromociones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteAdmin.resx">
       <DependentUpon>frmReporteAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteGerente.resx">
       <DependentUpon>frmReporteGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteVendedor.resx">
-      <DependentUpon>frmReporteVendedor.cs</DependentUpon>
+    <EmbeddedResource Include="chartResumen.resx">
+      <DependentUpon>chartResumen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
