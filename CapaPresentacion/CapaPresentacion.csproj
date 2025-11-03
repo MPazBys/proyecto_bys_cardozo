@@ -152,11 +152,11 @@
     <Compile Include="frmReporteGerente.Designer.cs">
       <DependentUpon>frmReporteGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="chartResumen.cs">
+    <Compile Include="frmReporteVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="chartResumen.Designer.cs">
-      <DependentUpon>chartResumen.cs</DependentUpon>
+    <Compile Include="frmReporteVendedor.Designer.cs">
+      <DependentUpon>frmReporteVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="frmReporteGerente.resx">
       <DependentUpon>frmReporteGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="chartResumen.resx">
-      <DependentUpon>chartResumen.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteVendedor.resx">
+      <DependentUpon>frmReporteVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

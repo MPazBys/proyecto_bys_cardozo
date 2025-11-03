@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class Categoria
+    public class Categoria
     {
         public int id_categoria { get; set; }
-        public string descripcion { get; set; }
-        public bool estado { get; set; }
+        public string nombre_categoria { get; set; }
     }
 }

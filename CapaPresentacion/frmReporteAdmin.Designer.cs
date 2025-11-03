@@ -40,8 +40,14 @@
             this.lblAlertaBackup = new System.Windows.Forms.Label();
             this.chartUsuariosActivos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartUsuariosPorRol = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnlMontoTotal = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalLibros = new System.Windows.Forms.Label();
+            this.dgvBajoStock = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosPorRol)).BeginInit();
+            this.pnlMontoTotal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -49,9 +55,9 @@
             this.lblTitulo.BackColor = System.Drawing.Color.White;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(25, 15);
+            this.lblTitulo.Location = new System.Drawing.Point(25, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(835, 148);
+            this.lblTitulo.Size = new System.Drawing.Size(570, 137);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Reportes";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -98,7 +104,7 @@
             this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartUsuariosActivos.Legends.Add(legend1);
-            this.chartUsuariosActivos.Location = new System.Drawing.Point(25, 180);
+            this.chartUsuariosActivos.Location = new System.Drawing.Point(25, 153);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
             this.chartUsuariosActivos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -106,7 +112,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartUsuariosActivos.Series.Add(series1);
-            this.chartUsuariosActivos.Size = new System.Drawing.Size(400, 300);
+            this.chartUsuariosActivos.Size = new System.Drawing.Size(402, 243);
             this.chartUsuariosActivos.TabIndex = 4;
             this.chartUsuariosActivos.Text = "chart1";
             // 
@@ -116,23 +122,65 @@
             this.chartUsuariosPorRol.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartUsuariosPorRol.Legends.Add(legend2);
-            this.chartUsuariosPorRol.Location = new System.Drawing.Point(460, 180);
+            this.chartUsuariosPorRol.Location = new System.Drawing.Point(433, 153);
             this.chartUsuariosPorRol.Name = "chartUsuariosPorRol";
             this.chartUsuariosPorRol.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartUsuariosPorRol.Series.Add(series2);
-            this.chartUsuariosPorRol.Size = new System.Drawing.Size(400, 300);
+            this.chartUsuariosPorRol.Size = new System.Drawing.Size(412, 243);
             this.chartUsuariosPorRol.TabIndex = 5;
             this.chartUsuariosPorRol.Text = "chart1";
+            // 
+            // pnlMontoTotal
+            // 
+            this.pnlMontoTotal.BackColor = System.Drawing.Color.Thistle;
+            this.pnlMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMontoTotal.Controls.Add(this.label3);
+            this.pnlMontoTotal.Controls.Add(this.lblTotalLibros);
+            this.pnlMontoTotal.Location = new System.Drawing.Point(601, 9);
+            this.pnlMontoTotal.Name = "pnlMontoTotal";
+            this.pnlMontoTotal.Size = new System.Drawing.Size(241, 137);
+            this.pnlMontoTotal.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 53);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "TOTAL    LIBROS     REGISTRADOS :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblTotalLibros
+            // 
+            this.lblTotalLibros.AutoSize = true;
+            this.lblTotalLibros.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalLibros.Location = new System.Drawing.Point(104, 74);
+            this.lblTotalLibros.Name = "lblTotalLibros";
+            this.lblTotalLibros.Size = new System.Drawing.Size(24, 28);
+            this.lblTotalLibros.TabIndex = 0;
+            this.lblTotalLibros.Text = "0";
+            this.lblTotalLibros.Click += new System.EventHandler(this.lblTotalLibros_Click);
+            // 
+            // dgvBajoStock
+            // 
+            this.dgvBajoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBajoStock.Location = new System.Drawing.Point(25, 402);
+            this.dgvBajoStock.Name = "dgvBajoStock";
+            this.dgvBajoStock.Size = new System.Drawing.Size(820, 125);
+            this.dgvBajoStock.TabIndex = 91;
             // 
             // frmReporteAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(991, 749);
+            this.ClientSize = new System.Drawing.Size(1095, 606);
+            this.Controls.Add(this.dgvBajoStock);
+            this.Controls.Add(this.pnlMontoTotal);
             this.Controls.Add(this.chartUsuariosPorRol);
             this.Controls.Add(this.chartUsuariosActivos);
             this.Controls.Add(this.lblAlertaBackup);
@@ -144,6 +192,9 @@
             this.Load += new System.EventHandler(this.frmReporteAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosActivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosPorRol)).EndInit();
+            this.pnlMontoTotal.ResumeLayout(false);
+            this.pnlMontoTotal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBajoStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +208,9 @@
         private System.Windows.Forms.Label lblAlertaBackup;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartUsuariosActivos;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartUsuariosPorRol;
+        private System.Windows.Forms.Panel pnlMontoTotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalLibros;
+        private System.Windows.Forms.DataGridView dgvBajoStock;
     }
 }

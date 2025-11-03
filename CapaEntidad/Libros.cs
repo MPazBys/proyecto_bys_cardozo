@@ -11,11 +11,14 @@ namespace CapaEntidad
     {
         public int id_libro{ get; set; }
         public string titulo { get; set; }
-        public float precio_libro { get; set; }
+        public Autor oAutor { get; set; } 
+        public Categoria oCategoria { get; set; }
+        public decimal precio_libro { get; set; }
         public int stock_libro { get; set; }
         public string descripcion { get; set; }
         public string imagen { get; set; }
-        
-
+        public bool Estado { get; set; }
     }
+
 }
+

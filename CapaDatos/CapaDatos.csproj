@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Backups.cs" />
+    <Compile Include="CD_Categoria.cs" />
     <Compile Include="CD_Cliente.cs" />
+    <Compile Include="CD_Libros.cs" />
     <Compile Include="CD_Permiso.cs" />
     <Compile Include="CD_PromocionDAO.cs" />
     <Compile Include="CD_ReporteAdmin.cs" />

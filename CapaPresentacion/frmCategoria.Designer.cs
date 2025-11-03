@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BGuardar = new FontAwesome.Sharp.IconButton();
-            this.BEditar = new FontAwesome.Sharp.IconButton();
-            this.BEliminar = new FontAwesome.Sharp.IconButton();
+            this.txtNombreCategoria = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ID_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.textId = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,72 +66,75 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Categoria:";
             // 
-            // textBox1
+            // txtNombreCategoria
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNombreCategoria.Location = new System.Drawing.Point(29, 81);
+            this.txtNombreCategoria.Name = "txtNombreCategoria";
+            this.txtNombreCategoria.Size = new System.Drawing.Size(166, 20);
+            this.txtNombreCategoria.TabIndex = 2;
             // 
-            // BGuardar
+            // btnGuardar
             // 
-            this.BGuardar.BackColor = System.Drawing.Color.SeaGreen;
-            this.BGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardar.ForeColor = System.Drawing.Color.White;
-            this.BGuardar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            this.BGuardar.IconColor = System.Drawing.Color.White;
-            this.BGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BGuardar.IconSize = 16;
-            this.BGuardar.Location = new System.Drawing.Point(29, 219);
-            this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(166, 26);
-            this.BGuardar.TabIndex = 3;
-            this.BGuardar.Text = "Guardar";
-            this.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 16;
+            this.btnGuardar.Location = new System.Drawing.Point(29, 219);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(166, 26);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // BEditar
+            // btnEditar
             // 
-            this.BEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditar.ForeColor = System.Drawing.Color.White;
-            this.BEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.BEditar.IconColor = System.Drawing.Color.White;
-            this.BEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BEditar.IconSize = 16;
-            this.BEditar.Location = new System.Drawing.Point(29, 256);
-            this.BEditar.Name = "BEditar";
-            this.BEditar.Size = new System.Drawing.Size(166, 23);
-            this.BEditar.TabIndex = 4;
-            this.BEditar.Text = "Editar";
-            this.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 16;
+            this.btnEditar.Location = new System.Drawing.Point(29, 256);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(166, 23);
+            this.btnEditar.TabIndex = 4;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // BEliminar
+            // btnEliminar
             // 
-            this.BEliminar.BackColor = System.Drawing.Color.Maroon;
-            this.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEliminar.ForeColor = System.Drawing.Color.White;
-            this.BEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.BEliminar.IconColor = System.Drawing.Color.White;
-            this.BEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BEliminar.IconSize = 16;
-            this.BEliminar.Location = new System.Drawing.Point(29, 285);
-            this.BEliminar.Name = "BEliminar";
-            this.BEliminar.Size = new System.Drawing.Size(166, 23);
-            this.BEliminar.TabIndex = 5;
-            this.BEliminar.Text = "Eliminar";
-            this.BEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.Maroon;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 16;
+            this.btnEliminar.Location = new System.Drawing.Point(29, 285);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(166, 23);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label3
             // 
@@ -144,36 +147,37 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Detalle Categoria";
             // 
-            // dataGridView1
+            // dgvCategorias
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCategorias.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
-            this.ID_Categoria,
-            this.Descripcion});
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(232, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(357, 246);
-            this.dataGridView1.TabIndex = 7;
+            this.id_categoria,
+            this.nombre_categoria});
+            this.dgvCategorias.GridColor = System.Drawing.Color.White;
+            this.dgvCategorias.Location = new System.Drawing.Point(232, 81);
+            this.dgvCategorias.Name = "dgvCategorias";
+            this.dgvCategorias.Size = new System.Drawing.Size(357, 246);
+            this.dgvCategorias.TabIndex = 7;
+            this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.HeaderText = "";
             this.btnSeleccionar.Name = "btnSeleccionar";
             // 
-            // ID_Categoria
+            // id_categoria
             // 
-            this.ID_Categoria.HeaderText = "ID_Categoria";
-            this.ID_Categoria.Name = "ID_Categoria";
-            this.ID_Categoria.Visible = false;
+            this.id_categoria.HeaderText = "ID_Categoria";
+            this.id_categoria.Name = "id_categoria";
+            this.id_categoria.Visible = false;
             // 
-            // Descripcion
+            // nombre_categoria
             // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 150;
+            this.nombre_categoria.HeaderText = "Descripcion";
+            this.nombre_categoria.Name = "nombre_categoria";
+            this.nombre_categoria.Width = 150;
             // 
             // label4
             // 
@@ -202,17 +206,17 @@
             this.ClientSize = new System.Drawing.Size(601, 358);
             this.Controls.Add(this.textId);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BEliminar);
-            this.Controls.Add(this.BEditar);
-            this.Controls.Add(this.BGuardar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtNombreCategoria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmCategoria";
             this.Text = "frmCategoria";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,16 +226,16 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton BGuardar;
-        private FontAwesome.Sharp.IconButton BEditar;
-        private FontAwesome.Sharp.IconButton BEliminar;
+        private System.Windows.Forms.TextBox txtNombreCategoria;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_categoria;
     }
 }

@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Backups.cs" />
+    <Compile Include="CN_Categoria.cs" />
     <Compile Include="CN_Cliente.cs" />
+    <Compile Include="CN_Libros.cs" />
     <Compile Include="CN_Permiso.cs" />
     <Compile Include="CN_Promocion.cs" />
     <Compile Include="CN_ReporteAdmin.cs" />

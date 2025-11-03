@@ -16,7 +16,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CapaPresentacion
 {
-    public partial class chartResumen : Form
+    public partial class frmReporteVendedor : Form
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
 
@@ -27,7 +27,7 @@ namespace CapaPresentacion
         private Timer timerContadores = new Timer();
 
 
-        public chartResumen()
+        public frmReporteVendedor()
         {
             InitializeComponent();
 
@@ -297,7 +297,7 @@ namespace CapaPresentacion
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                // Mostrar en DataGridView (esto no cambia)
+                // Mostrar en DataGridView 
                 dgvTopClientes.DataSource = dt;
             }
 

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class chartResumen
+    partial class frmReporteVendedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
@@ -39,9 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlMontoTotal = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblMontoTotal = new System.Windows.Forms.Label();
             this.pnlTransferencia = new System.Windows.Forms.Panel();
             this.lblTransferencia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,14 +51,17 @@
             this.pnlResumen = new System.Windows.Forms.Panel();
             this.dgvTopClientes = new System.Windows.Forms.DataGridView();
             this.chartResumenVenta = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblMontoTotal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlMontoTotal = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            this.pnlMontoTotal.SuspendLayout();
             this.pnlTransferencia.SuspendLayout();
             this.pnlEfectivo.SuspendLayout();
             this.pnlDebito.SuspendLayout();
             this.pnlResumen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartResumenVenta)).BeginInit();
+            this.pnlMontoTotal.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -154,36 +154,6 @@
             this.label1.Size = new System.Drawing.Size(83, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Inicio";
-            // 
-            // pnlMontoTotal
-            // 
-            this.pnlMontoTotal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMontoTotal.Controls.Add(this.label3);
-            this.pnlMontoTotal.Controls.Add(this.lblMontoTotal);
-            this.pnlMontoTotal.Location = new System.Drawing.Point(18, 12);
-            this.pnlMontoTotal.Name = "pnlMontoTotal";
-            this.pnlMontoTotal.Size = new System.Drawing.Size(194, 100);
-            this.pnlMontoTotal.TabIndex = 89;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 41);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "MONTO   TOTAL         VENTAS:";
-            // 
-            // lblMontoTotal
-            // 
-            this.lblMontoTotal.AutoSize = true;
-            this.lblMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoTotal.Location = new System.Drawing.Point(41, 60);
-            this.lblMontoTotal.Name = "lblMontoTotal";
-            this.lblMontoTotal.Size = new System.Drawing.Size(71, 29);
-            this.lblMontoTotal.TabIndex = 0;
-            this.lblMontoTotal.Text = "$0,00";
             // 
             // pnlTransferencia
             // 
@@ -300,21 +270,51 @@
             // 
             // chartResumenVenta
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartResumenVenta.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartResumenVenta.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartResumenVenta.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartResumenVenta.Legends.Add(legend1);
             this.chartResumenVenta.Location = new System.Drawing.Point(473, 185);
             this.chartResumenVenta.Name = "chartResumenVenta";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartResumenVenta.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartResumenVenta.Series.Add(series1);
             this.chartResumenVenta.Size = new System.Drawing.Size(557, 244);
             this.chartResumenVenta.TabIndex = 96;
             this.chartResumenVenta.Text = "chart1";
             // 
-            // chartResumen
+            // lblMontoTotal
+            // 
+            this.lblMontoTotal.AutoSize = true;
+            this.lblMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoTotal.Location = new System.Drawing.Point(41, 60);
+            this.lblMontoTotal.Name = "lblMontoTotal";
+            this.lblMontoTotal.Size = new System.Drawing.Size(71, 29);
+            this.lblMontoTotal.TabIndex = 0;
+            this.lblMontoTotal.Text = "$0,00";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 41);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "MONTO   TOTAL         VENTAS:";
+            // 
+            // pnlMontoTotal
+            // 
+            this.pnlMontoTotal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMontoTotal.Controls.Add(this.label3);
+            this.pnlMontoTotal.Controls.Add(this.lblMontoTotal);
+            this.pnlMontoTotal.Location = new System.Drawing.Point(18, 12);
+            this.pnlMontoTotal.Name = "pnlMontoTotal";
+            this.pnlMontoTotal.Size = new System.Drawing.Size(194, 100);
+            this.pnlMontoTotal.TabIndex = 89;
+            // 
+            // frmReporteVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,12 +325,10 @@
             this.Controls.Add(this.pnlResumen);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
-            this.Name = "chartResumen";
+            this.Name = "frmReporteVendedor";
             this.Text = "frmReportes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnlMontoTotal.ResumeLayout(false);
-            this.pnlMontoTotal.PerformLayout();
             this.pnlTransferencia.ResumeLayout(false);
             this.pnlTransferencia.PerformLayout();
             this.pnlEfectivo.ResumeLayout(false);
@@ -340,6 +338,8 @@
             this.pnlResumen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartResumenVenta)).EndInit();
+            this.pnlMontoTotal.ResumeLayout(false);
+            this.pnlMontoTotal.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -353,14 +353,11 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAplicarFiltro;
-        private System.Windows.Forms.Panel pnlMontoTotal;
         private System.Windows.Forms.Panel pnlTransferencia;
         private System.Windows.Forms.Panel pnlEfectivo;
         private System.Windows.Forms.Panel pnlDebito;
         private System.Windows.Forms.ComboBox cmbPeriodo;
         private System.Windows.Forms.Panel pnlResumen;
-        private System.Windows.Forms.Label lblMontoTotal;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTransferencia;
         private System.Windows.Forms.Label label7;
@@ -369,5 +366,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvTopClientes;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartResumenVenta;
+        private System.Windows.Forms.Panel pnlMontoTotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMontoTotal;
     }
 }

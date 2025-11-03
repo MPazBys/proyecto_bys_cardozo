@@ -4,7 +4,9 @@ using CapaPresentacion.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -29,6 +31,7 @@ namespace CapaPresentacion
             CargarUsuariosActivosInactivos();
             CargarUsuariosPorRol();
             VerificarAlertaBackup();
+            CargarResumenInventario();
         }
 
         // --- ÚLTIMO BACKUP ---
@@ -237,5 +240,48 @@ namespace CapaPresentacion
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CargarResumenInventario()
+        {
+            // Consulta 1: contador total
+            string queryTotal = "SELECT COUNT(*) AS TotalLibros FROM libro;";
+
+            // Consulta 2: libros con bajo stock
+            string queryBajoStock = "SELECT id_libro, titulo, id_autor, id_categoria, stock_libro FROM libro WHERE stock_libro < 5 ORDER BY stock_libro ASC;";
+
+            string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                //1️ Obtener total de libros
+                SqlCommand cmdTotal = new SqlCommand(queryTotal, conn);
+                int totalLibros = Convert.ToInt32(cmdTotal.ExecuteScalar());
+                lblTotalLibros.Text = $" {totalLibros}";
+
+                // 2️ Obtener listado de libros con bajo stock
+                SqlDataAdapter da = new SqlDataAdapter(queryBajoStock, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvBajoStock.DataSource = dt;
+            }
+
+            // 🔹 Opcional: ajustar estilo de la tabla
+            dgvBajoStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBajoStock.ReadOnly = true;
+            dgvBajoStock.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalLibros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
