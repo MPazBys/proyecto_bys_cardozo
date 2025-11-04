@@ -73,5 +73,19 @@ namespace CapaNegocio
         {
             return objCD_Libro.ListarCategorias();
         }
+
+        private CD_Libros oCD_libro = new CD_Libros();
+
+        public List<Libros> Listar2()
+        {
+            return oCD_libro.Listar();
+        }
+
+        public List<Libros> BuscarPorNombre(string texto)
+        {
+            texto = texto.ToLower();
+            return oCD_libro.Listar2()
+                .Where(l => l.titulo.ToLower().Contains(texto)).ToList();
+        }
     }
 }

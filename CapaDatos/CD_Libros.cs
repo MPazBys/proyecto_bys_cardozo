@@ -203,5 +203,46 @@ namespace CapaDatos
             return lista;
         }
 
+        public List<Libros> Listar2()
+        {
+            List<Libros> lista = new List<Libros>();
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT id_libro, titulo, precio_libro, stock_libro, descripcion, imagen, estado");
+                    query.AppendLine("FROM libro");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Libros()
+                            {
+                                id_libro = Convert.ToInt32(dr["id_libro"]),
+                                titulo = dr["titulo"].ToString(),
+                                precio_libro = Convert.ToDecimal(dr["precio_libro"]),
+                                stock_libro = Convert.ToInt32(dr["stock_libro"]),
+                                descripcion = dr["descripcion"].ToString(),
+                                imagen = dr["imagen"].ToString(),
+                                Estado = Convert.ToBoolean(dr["estado"])
+                            });
+                        }
+                    }
+                }
+                catch
+                {
+                    lista = new List<Libros>();
+                }
+            }
+            return lista;
+        }
     }
 }

@@ -114,7 +114,7 @@
             this.menuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.menuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuregistrarventa.Name = "menuregistrarventa";
-            this.menuregistrarventa.Size = new System.Drawing.Size(128, 22);
+            this.menuregistrarventa.Size = new System.Drawing.Size(180, 22);
             this.menuregistrarventa.Text = "Registrar";
             this.menuregistrarventa.Click += new System.EventHandler(this.menuregistrarventa_Click);
             // 
@@ -124,7 +124,7 @@
             this.menuverdetalle.IconColor = System.Drawing.Color.Black;
             this.menuverdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuverdetalle.Name = "menuverdetalle";
-            this.menuverdetalle.Size = new System.Drawing.Size(128, 22);
+            this.menuverdetalle.Size = new System.Drawing.Size(180, 22);
             this.menuverdetalle.Text = "Ver detalle";
             this.menuverdetalle.Click += new System.EventHandler(this.menuverdetalle_Click);
             // 

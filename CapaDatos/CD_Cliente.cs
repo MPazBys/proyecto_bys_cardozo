@@ -214,5 +214,49 @@ namespace CapaDatos
 
             return respuesta;
         }
+
+        public Cliente ObtenerPorDNI(long dni)
+        {
+            Cliente obj = null;
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select id_cliente, nombre, apellido, email, dni, estado, fecha_creacion");
+                    query.AppendLine("from Cliente where dni = @dni");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.Parameters.AddWithValue("@dni", dni);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj = new Cliente()
+                            {
+                                id_cliente = Convert.ToInt32(dr["id_cliente"]),
+                                nombre = dr["nombre"].ToString(),
+                                apellido = dr["apellido"].ToString(),
+                                email = dr["email"].ToString(),
+                                dni = Convert.ToInt64(dr["dni"]),
+                                estado = Convert.ToBoolean(dr["estado"]),
+                                fecha_creacion = Convert.ToDateTime(dr["fecha_creacion"]).Date
+                            };
+                        }
+                    }
+                }
+                catch
+                {
+                    obj = null;
+                }
+            }
+
+            return obj;
+        }
     }
 }

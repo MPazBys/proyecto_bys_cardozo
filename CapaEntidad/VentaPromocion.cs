@@ -10,10 +10,10 @@ namespace CapaEntidad
     {
         public int IdVenta { get; set; }
         public int IdPromocion { get; set; }
-        public decimal MontoDescuento { get; set; }
+        public decimal MontoDescuento { get; set; } // Usamos decimal para precisión monetaria
 
-        // Propiedades opcionales
+        // Propiedades de ayuda para la visualización en la UI
         public string NombrePromocion { get; set; }
-        public DateTime FechaVenta { get; set; }
+        public string TipoPromocion { get; set; }
     }
 }

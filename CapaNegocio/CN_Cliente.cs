@@ -84,5 +84,10 @@ namespace CapaNegocio
         {
             return objcd_cliente.desactivar(obj, out Mensaje);
         }
+
+        public Cliente ObtenerClientePorDNI(long dni)
+        {
+            return objcd_cliente.ObtenerPorDNI(dni);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using CapaEntidad;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,9 +27,10 @@ namespace CapaPresentacion
         private decimal currentMontoTotal, currentTransferencia, currentEfectivo, currentDebito;
         private Timer timerContadores = new Timer();
 
-
-        public frmReporteVendedor()
+        private readonly Usuario _usuarioLogueado;
+        public frmReporteVendedor(Usuario objusuarios)
         {
+            this._usuarioLogueado = objusuarios;
             InitializeComponent();
 
 
@@ -112,7 +114,7 @@ namespace CapaPresentacion
         private void CargarReporte()
         {
             DateTime fechaInicio = dtpFechaInicio.Value.Date;
-            DateTime fechaFin = dtpFechaFin.Value.Date.AddDays(1).AddSeconds(-1); // Incluye todo el día
+            DateTime fechaFin = dtpFechaFin.Value.Date.AddDays(1); // Incluye todo el día
 
             // Reiniciar contadores
             targetMontoTotal = targetTransferencia = targetEfectivo = targetDebito = 0;
@@ -127,6 +129,7 @@ namespace CapaPresentacion
                     cmdPaneles.CommandType = CommandType.StoredProcedure;
                     cmdPaneles.Parameters.AddWithValue("@Fecha_inicio", fechaInicio);
                     cmdPaneles.Parameters.AddWithValue("@Fecha_fin", fechaFin);
+                    cmdPaneles.Parameters.AddWithValue("@IdUsuario", _usuarioLogueado?.id_usuario ?? (object)DBNull.Value);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmdPaneles);
                     DataSet ds = new DataSet();
@@ -154,6 +157,7 @@ namespace CapaPresentacion
                     cmdGrafico.CommandType = CommandType.StoredProcedure;
                     cmdGrafico.Parameters.AddWithValue("@Fecha_inicio", fechaInicio);
                     cmdGrafico.Parameters.AddWithValue("@Fecha_fin", fechaFin);
+                    cmdGrafico.Parameters.AddWithValue("@IdUsuario", _usuarioLogueado?.id_usuario ?? (object)DBNull.Value);
 
                     using (SqlDataReader dr = cmdGrafico.ExecuteReader())
                     {

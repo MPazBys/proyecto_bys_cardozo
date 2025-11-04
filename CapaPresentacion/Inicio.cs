@@ -92,7 +92,7 @@ namespace CapaPresentacion
 
         private void menuregistrarventa_Click(object sender, EventArgs e)
         {
-            abrirFormulario(menuventas, new frmAddVenta());
+            abrirFormulario(menuventas, new frmAddVenta(usuarioActual));
         }
 
         private void menuverdetalle_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace CapaPresentacion
 
             if (usuarioActual.oRol.nombre_rol == "VENDEDOR")
             {
-                abrirFormulario((IconMenuItem)sender, new frmReporteVendedor());
+                abrirFormulario((IconMenuItem)sender, new frmReporteVendedor(usuarioActual));
             }
             else if (usuarioActual.oRol.nombre_rol == "ADMINISTRADOR")
             {
