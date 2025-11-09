@@ -85,6 +85,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@SubTotal", objVenta.subtotal);
                     cmd.Parameters.AddWithValue("@DescuentoTotal", objVenta.descuento_total);
                     cmd.Parameters.AddWithValue("@Total", objVenta.total);
+                    cmd.Parameters.AddWithValue("@TipoDocumento", objVenta.tipo_doc);
 
                     // Parámetros XML
                     cmd.Parameters.AddWithValue("@DetalleVenta", ConvertirDetallesAVentaXML(objVenta.oDetalleVenta));

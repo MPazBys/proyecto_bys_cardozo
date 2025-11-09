@@ -409,6 +409,7 @@ namespace CapaPresentacion
             // Pasar valores adicionales al objeto venta
             ventaActual.oUsuario = usuarioLogueado;
             ventaActual.fecha = dtpVenta.Value.ToString("yyyyMMdd");
+            ventaActual.tipo_doc = cboTipoDoc.Text;
 
             string mensaje;
             int idVenta = oCNVenta.RegistrarVenta(ventaActual, out mensaje);

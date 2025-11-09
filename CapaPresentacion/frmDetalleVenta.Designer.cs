@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCUITCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTipoDoc = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAnularVenta = new FontAwesome.Sharp.IconButton();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
+            this.btnDescargarFactura = new FontAwesome.Sharp.IconButton();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
@@ -71,7 +72,7 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.Black;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 16;
-            this.btnLimpiar.Location = new System.Drawing.Point(821, 41);
+            this.btnLimpiar.Location = new System.Drawing.Point(783, 41);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(73, 23);
             this.btnLimpiar.TabIndex = 69;
@@ -91,7 +92,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 16;
-            this.btnBuscar.Location = new System.Drawing.Point(738, 42);
+            this.btnBuscar.Location = new System.Drawing.Point(700, 42);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 21);
             this.btnBuscar.TabIndex = 59;
@@ -124,7 +125,7 @@
             // 
             // txtNroIdVenta
             // 
-            this.txtNroIdVenta.Location = new System.Drawing.Point(587, 42);
+            this.txtNroIdVenta.Location = new System.Drawing.Point(549, 42);
             this.txtNroIdVenta.Name = "txtNroIdVenta";
             this.txtNroIdVenta.Size = new System.Drawing.Size(114, 20);
             this.txtNroIdVenta.TabIndex = 57;
@@ -136,7 +137,7 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(466, 43);
+            this.label5.Location = new System.Drawing.Point(428, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 18);
             this.label5.TabIndex = 56;
@@ -246,7 +247,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtTipoDoc);
             this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label4);
@@ -261,13 +262,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion Venta";
             // 
-            // textBox4
+            // txtTipoDoc
             // 
-            this.textBox4.Location = new System.Drawing.Point(268, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(158, 20);
-            this.textBox4.TabIndex = 72;
+            this.txtTipoDoc.Location = new System.Drawing.Point(268, 46);
+            this.txtTipoDoc.Name = "txtTipoDoc";
+            this.txtTipoDoc.ReadOnly = true;
+            this.txtTipoDoc.Size = new System.Drawing.Size(158, 20);
+            this.txtTipoDoc.TabIndex = 72;
             // 
             // txtFecha
             // 
@@ -349,9 +350,9 @@
             this.btnAnularVenta.IconColor = System.Drawing.Color.White;
             this.btnAnularVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAnularVenta.IconSize = 16;
-            this.btnAnularVenta.Location = new System.Drawing.Point(902, 39);
+            this.btnAnularVenta.Location = new System.Drawing.Point(888, 38);
             this.btnAnularVenta.Name = "btnAnularVenta";
-            this.btnAnularVenta.Size = new System.Drawing.Size(120, 26);
+            this.btnAnularVenta.Size = new System.Drawing.Size(134, 26);
             this.btnAnularVenta.TabIndex = 70;
             this.btnAnularVenta.Text = "Anular Venta";
             this.btnAnularVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -364,26 +365,48 @@
             this.dgvDetalleVenta.AllowUserToAddRows = false;
             this.dgvDetalleVenta.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvDetalleVenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Location = new System.Drawing.Point(241, 246);
             this.dgvDetalleVenta.MultiSelect = false;
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDetalleVenta.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDetalleVenta.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetalleVenta.RowTemplate.Height = 30;
             this.dgvDetalleVenta.Size = new System.Drawing.Size(781, 168);
             this.dgvDetalleVenta.TabIndex = 71;
+            // 
+            // btnDescargarFactura
+            // 
+            this.btnDescargarFactura.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnDescargarFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescargarFactura.Enabled = false;
+            this.btnDescargarFactura.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDescargarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescargarFactura.ForeColor = System.Drawing.Color.White;
+            this.btnDescargarFactura.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
+            this.btnDescargarFactura.IconColor = System.Drawing.Color.White;
+            this.btnDescargarFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDescargarFactura.IconSize = 16;
+            this.btnDescargarFactura.Location = new System.Drawing.Point(888, 446);
+            this.btnDescargarFactura.Name = "btnDescargarFactura";
+            this.btnDescargarFactura.Size = new System.Drawing.Size(134, 26);
+            this.btnDescargarFactura.TabIndex = 72;
+            this.btnDescargarFactura.Text = "Descargar Factura";
+            this.btnDescargarFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDescargarFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDescargarFactura.UseVisualStyleBackColor = false;
+            this.btnDescargarFactura.Click += new System.EventHandler(this.btnDescargarFactura_Click);
             // 
             // frmDetalleVenta
             // 
@@ -391,6 +414,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1265, 638);
+            this.Controls.Add(this.btnDescargarFactura);
             this.Controls.Add(this.dgvDetalleVenta);
             this.Controls.Add(this.btnAnularVenta);
             this.Controls.Add(this.btnLimpiar);
@@ -444,7 +468,8 @@
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnAnularVenta;
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTipoDoc;
         private System.Windows.Forms.TextBox txtFecha;
+        private FontAwesome.Sharp.IconButton btnDescargarFactura;
     }
 }

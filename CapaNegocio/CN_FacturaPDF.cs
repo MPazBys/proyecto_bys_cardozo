@@ -90,7 +90,7 @@ namespace CapaNegocio
                 companyCell.AddElement(new Phrase("DATOS DEL VENDEDOR", fSubTitulo));
                 companyCell.AddElement(new Phrase($"Vendedor: {venta.oUsuario.nombre}", fNormal));
                 companyCell.AddElement(new Phrase("Sucursal: Central", fNormal));
-                companyCell.AddElement(new Phrase("Tipo Doc: Factura A", fNormal));
+                companyCell.AddElement(new Phrase($"Tipo Doc: {venta.tipo_doc}", fNormal));
 
                 infoTable.AddCell(clientCell);
                 infoTable.AddCell(companyCell);

@@ -16,6 +16,7 @@ namespace CapaEntidad
         public decimal total { get; set; } // Total Neto a Pagar (subtotal - descuento_total)
         public string fecha { get; set; }
         public bool estado { get; set; } = true; // 1: Activa, 0: Anulada
+        public string tipo_doc { get; set; }
 
         // Colecciones para enviar/recibir datos complejos al/del SP
         public List<Detalle_venta> oDetalleVenta { get; set; }
