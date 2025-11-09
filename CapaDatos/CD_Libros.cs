@@ -212,8 +212,17 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT id_libro, titulo, precio_libro, stock_libro, descripcion, imagen, estado");
-                    query.AppendLine("FROM libro");
+                    query.AppendLine("SELECT ");
+                    // 1. Columnas de LIBRO
+                    query.AppendLine("L.id_libro, L.titulo, L.precio_libro, L.stock_libro, L.descripcion, L.imagen, L.estado,");
+                    // 2. Columnas de AUTOR
+                    query.AppendLine("A.id_autor, A.nombre_autor,");
+                    // 3. Columnas de CATEGORIA (¡Quitamos la coma de la última línea!)
+                    query.AppendLine("C.id_categoria, C.nombre_categoria");
+
+                    query.AppendLine("FROM libro L");
+                    query.AppendLine("INNER JOIN autor A ON L.id_autor = A.id_autor");
+                    query.AppendLine("INNER JOIN categoria C ON L.id_categoria = C.id_categoria");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
                     cmd.CommandType = CommandType.Text;
@@ -232,7 +241,18 @@ namespace CapaDatos
                                 stock_libro = Convert.ToInt32(dr["stock_libro"]),
                                 descripcion = dr["descripcion"].ToString(),
                                 imagen = dr["imagen"].ToString(),
-                                Estado = Convert.ToBoolean(dr["estado"])
+                                Estado = Convert.ToBoolean(dr["estado"]),
+                                // POBLAR OBJETOS RELACIONADOS:
+                                oAutor = new Autor()
+                                {
+                                    id_autor = Convert.ToInt32(dr["id_autor"]),
+                                    nombre_autor = dr["nombre_autor"].ToString()
+                                },
+                                oCategoria = new Categoria()
+                                {
+                                    id_categoria = Convert.ToInt32(dr["id_categoria"]),
+                                    nombre_categoria = dr["nombre_categoria"].ToString()
+                                }
                             });
                         }
                     }

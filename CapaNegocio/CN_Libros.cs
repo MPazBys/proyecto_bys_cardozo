@@ -78,12 +78,13 @@ namespace CapaNegocio
 
         public List<Libros> Listar2()
         {
-            return oCD_libro.Listar();
+            return oCD_libro.Listar2();
         }
 
         public List<Libros> BuscarPorNombre(string texto)
         {
             texto = texto.ToLower();
+            // Esta función ahora devuelve Libros con Autor y Categoría completos
             return oCD_libro.Listar2()
                 .Where(l => l.titulo.ToLower().Contains(texto)).ToList();
         }
