@@ -36,11 +36,11 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textId = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,23 +162,7 @@
             this.dgvCategorias.Size = new System.Drawing.Size(357, 246);
             this.dgvCategorias.TabIndex = 7;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            // 
-            // id_categoria
-            // 
-            this.id_categoria.HeaderText = "ID_Categoria";
-            this.id_categoria.Name = "id_categoria";
-            this.id_categoria.Visible = false;
-            // 
-            // nombre_categoria
-            // 
-            this.nombre_categoria.HeaderText = "Descripcion";
-            this.nombre_categoria.Name = "nombre_categoria";
-            this.nombre_categoria.Width = 150;
+            this.dgvCategorias.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCategorias_CellPainting);
             // 
             // label4
             // 
@@ -198,6 +182,24 @@
             this.textId.Size = new System.Drawing.Size(31, 20);
             this.textId.TabIndex = 9;
             this.textId.Visible = false;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Width = 30;
+            // 
+            // id_categoria
+            // 
+            this.id_categoria.HeaderText = "ID_Categoria";
+            this.id_categoria.Name = "id_categoria";
+            this.id_categoria.Visible = false;
+            // 
+            // nombre_categoria
+            // 
+            this.nombre_categoria.HeaderText = "Descripcion";
+            this.nombre_categoria.Name = "nombre_categoria";
+            this.nombre_categoria.Width = 150;
             // 
             // frmCategoria
             // 
