@@ -226,5 +226,29 @@ namespace CapaDatos
 
             return respuesta;
         }
+
+        public DataTable ReporteVendedores(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteVendedores", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@inicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("@fin", fechaFin);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return dt;
+        }
     }
 }

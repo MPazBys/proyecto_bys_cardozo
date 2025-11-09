@@ -87,16 +87,17 @@
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.BackColor = System.Drawing.Color.White;
-            this.lblnombre.Location = new System.Drawing.Point(31, 93);
+            this.lblnombre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblnombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblnombre.Location = new System.Drawing.Point(34, 92);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(47, 13);
+            this.lblnombre.Size = new System.Drawing.Size(49, 15);
             this.lblnombre.TabIndex = 2;
             this.lblnombre.Text = "Nombre:";
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Location = new System.Drawing.Point(0, 0);
@@ -116,80 +117,88 @@
             // lblcuit
             // 
             this.lblcuit.AutoSize = true;
-            this.lblcuit.BackColor = System.Drawing.Color.White;
-            this.lblcuit.Location = new System.Drawing.Point(31, 51);
+            this.lblcuit.BackColor = System.Drawing.SystemColors.Control;
+            this.lblcuit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblcuit.Location = new System.Drawing.Point(34, 50);
             this.lblcuit.Name = "lblcuit";
-            this.lblcuit.Size = new System.Drawing.Size(88, 13);
+            this.lblcuit.Size = new System.Drawing.Size(90, 15);
             this.lblcuit.TabIndex = 4;
             this.lblcuit.Text = "Nro. Documento:";
             // 
             // lblcontrasena
             // 
             this.lblcontrasena.AutoSize = true;
-            this.lblcontrasena.BackColor = System.Drawing.Color.White;
-            this.lblcontrasena.Location = new System.Drawing.Point(31, 265);
+            this.lblcontrasena.BackColor = System.Drawing.SystemColors.Control;
+            this.lblcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblcontrasena.Location = new System.Drawing.Point(34, 264);
             this.lblcontrasena.Name = "lblcontrasena";
-            this.lblcontrasena.Size = new System.Drawing.Size(64, 13);
+            this.lblcontrasena.Size = new System.Drawing.Size(66, 15);
             this.lblcontrasena.TabIndex = 6;
             this.lblcontrasena.Text = "Contraseña:";
             // 
             // lblconfcontrasena
             // 
             this.lblconfcontrasena.AutoSize = true;
-            this.lblconfcontrasena.BackColor = System.Drawing.Color.White;
-            this.lblconfcontrasena.Location = new System.Drawing.Point(31, 308);
+            this.lblconfcontrasena.BackColor = System.Drawing.SystemColors.Control;
+            this.lblconfcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblconfcontrasena.Location = new System.Drawing.Point(34, 307);
             this.lblconfcontrasena.Name = "lblconfcontrasena";
-            this.lblconfcontrasena.Size = new System.Drawing.Size(110, 13);
+            this.lblconfcontrasena.Size = new System.Drawing.Size(112, 15);
             this.lblconfcontrasena.TabIndex = 7;
             this.lblconfcontrasena.Text = "Confirmar contraseña:";
             // 
             // lblemail
             // 
             this.lblemail.AutoSize = true;
-            this.lblemail.BackColor = System.Drawing.Color.White;
-            this.lblemail.Location = new System.Drawing.Point(31, 179);
+            this.lblemail.BackColor = System.Drawing.SystemColors.Control;
+            this.lblemail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblemail.Location = new System.Drawing.Point(34, 178);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(35, 13);
+            this.lblemail.Size = new System.Drawing.Size(37, 15);
             this.lblemail.TabIndex = 8;
             this.lblemail.Text = "Email:";
             // 
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
-            this.lblusuario.BackColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(31, 222);
+            this.lblusuario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblusuario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblusuario.Location = new System.Drawing.Point(34, 221);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(46, 13);
+            this.lblusuario.Size = new System.Drawing.Size(48, 15);
             this.lblusuario.TabIndex = 9;
             this.lblusuario.Text = "Usuario:";
             // 
             // lblrol
             // 
             this.lblrol.AutoSize = true;
-            this.lblrol.BackColor = System.Drawing.Color.White;
-            this.lblrol.Location = new System.Drawing.Point(31, 407);
+            this.lblrol.BackColor = System.Drawing.SystemColors.Control;
+            this.lblrol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblrol.Location = new System.Drawing.Point(34, 407);
             this.lblrol.Name = "lblrol";
-            this.lblrol.Size = new System.Drawing.Size(26, 13);
+            this.lblrol.Size = new System.Drawing.Size(28, 15);
             this.lblrol.TabIndex = 10;
             this.lblrol.Text = "Rol:";
             // 
             // lblsexo
             // 
             this.lblsexo.AutoSize = true;
-            this.lblsexo.BackColor = System.Drawing.Color.White;
-            this.lblsexo.Location = new System.Drawing.Point(31, 380);
+            this.lblsexo.BackColor = System.Drawing.SystemColors.Control;
+            this.lblsexo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblsexo.Location = new System.Drawing.Point(34, 380);
             this.lblsexo.Name = "lblsexo";
-            this.lblsexo.Size = new System.Drawing.Size(37, 13);
+            this.lblsexo.Size = new System.Drawing.Size(39, 15);
             this.lblsexo.TabIndex = 11;
             this.lblsexo.Text = "Sexo: ";
             // 
             // lblfechanac
             // 
             this.lblfechanac.AutoSize = true;
-            this.lblfechanac.BackColor = System.Drawing.Color.White;
-            this.lblfechanac.Location = new System.Drawing.Point(31, 354);
+            this.lblfechanac.BackColor = System.Drawing.SystemColors.Control;
+            this.lblfechanac.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblfechanac.Location = new System.Drawing.Point(34, 353);
             this.lblfechanac.Name = "lblfechanac";
-            this.lblfechanac.Size = new System.Drawing.Size(96, 13);
+            this.lblfechanac.Size = new System.Drawing.Size(98, 15);
             this.lblfechanac.TabIndex = 12;
             this.lblfechanac.Text = "Fecha Nacimiento:";
             // 
@@ -234,15 +243,15 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(133, 350);
+            this.dtpFecha.Location = new System.Drawing.Point(135, 350);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(114, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(112, 20);
             this.dtpFecha.TabIndex = 20;
             // 
             // rbmujer
             // 
             this.rbmujer.AutoSize = true;
-            this.rbmujer.BackColor = System.Drawing.Color.White;
+            this.rbmujer.BackColor = System.Drawing.SystemColors.Control;
             this.rbmujer.ForeColor = System.Drawing.Color.Black;
             this.rbmujer.Location = new System.Drawing.Point(128, 376);
             this.rbmujer.Name = "rbmujer";
@@ -255,7 +264,7 @@
             // rbhombre
             // 
             this.rbhombre.AutoSize = true;
-            this.rbhombre.BackColor = System.Drawing.Color.White;
+            this.rbhombre.BackColor = System.Drawing.SystemColors.Control;
             this.rbhombre.ForeColor = System.Drawing.Color.Black;
             this.rbhombre.Location = new System.Drawing.Point(185, 376);
             this.rbhombre.Name = "rbhombre";
@@ -268,7 +277,7 @@
             // cborol
             // 
             this.cborol.FormattingEnabled = true;
-            this.cborol.Location = new System.Drawing.Point(80, 399);
+            this.cborol.Location = new System.Drawing.Point(80, 402);
             this.cborol.Name = "cborol";
             this.cborol.Size = new System.Drawing.Size(167, 21);
             this.cborol.TabIndex = 23;
@@ -276,17 +285,19 @@
             // lbldetalleusuario
             // 
             this.lbldetalleusuario.AutoSize = true;
-            this.lbldetalleusuario.BackColor = System.Drawing.Color.White;
+            this.lbldetalleusuario.BackColor = System.Drawing.SystemColors.Control;
+            this.lbldetalleusuario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbldetalleusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbldetalleusuario.Location = new System.Drawing.Point(75, 17);
+            this.lbldetalleusuario.Location = new System.Drawing.Point(73, 13);
             this.lbldetalleusuario.Name = "lbldetalleusuario";
-            this.lbldetalleusuario.Size = new System.Drawing.Size(144, 25);
+            this.lbldetalleusuario.Size = new System.Drawing.Size(146, 27);
             this.lbldetalleusuario.TabIndex = 28;
             this.lbldetalleusuario.Text = "Detalle Usuario";
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
+            this.dgvdata.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -312,7 +323,7 @@
             this.Estado,
             this.Sexo,
             this.FechaNacimiento});
-            this.dgvdata.Location = new System.Drawing.Point(317, 152);
+            this.dgvdata.Location = new System.Drawing.Point(347, 152);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
@@ -425,9 +436,10 @@
             // 
             // lbllista
             // 
-            this.lbllista.BackColor = System.Drawing.Color.White;
+            this.lbllista.BackColor = System.Drawing.SystemColors.Control;
+            this.lbllista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbllista.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lbllista.Location = new System.Drawing.Point(317, 35);
+            this.lbllista.Location = new System.Drawing.Point(347, 35);
             this.lbllista.Name = "lbllista";
             this.lbllista.Size = new System.Drawing.Size(677, 51);
             this.lbllista.TabIndex = 30;
@@ -446,7 +458,7 @@
             // cbobusqueda
             // 
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(411, 109);
+            this.cbobusqueda.Location = new System.Drawing.Point(441, 109);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(204, 21);
             this.cbobusqueda.TabIndex = 63;
@@ -463,18 +475,20 @@
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
-            this.lblapellido.BackColor = System.Drawing.Color.White;
-            this.lblapellido.Location = new System.Drawing.Point(31, 136);
+            this.lblapellido.BackColor = System.Drawing.SystemColors.Control;
+            this.lblapellido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblapellido.Location = new System.Drawing.Point(34, 135);
             this.lblapellido.Name = "lblapellido";
-            this.lblapellido.Size = new System.Drawing.Size(47, 13);
+            this.lblapellido.Size = new System.Drawing.Size(49, 15);
             this.lblapellido.TabIndex = 5;
             this.lblapellido.Text = "Apellido:";
             // 
             // lblbusca
             // 
-            this.lblbusca.BackColor = System.Drawing.Color.White;
+            this.lblbusca.BackColor = System.Drawing.SystemColors.Control;
+            this.lblbusca.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblbusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbusca.Location = new System.Drawing.Point(317, 93);
+            this.lblbusca.Location = new System.Drawing.Point(347, 93);
             this.lblbusca.Name = "lblbusca";
             this.lblbusca.Size = new System.Drawing.Size(677, 51);
             this.lblbusca.TabIndex = 65;
@@ -483,7 +497,7 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(630, 110);
+            this.txtbusqueda.Location = new System.Drawing.Point(660, 110);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(204, 20);
             this.txtbusqueda.TabIndex = 66;
@@ -550,7 +564,7 @@
             this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
             this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiarbuscador.IconSize = 16;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(943, 106);
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(973, 106);
             this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             this.btnlimpiarbuscador.Size = new System.Drawing.Size(34, 24);
             this.btnlimpiarbuscador.TabIndex = 68;
@@ -570,7 +584,7 @@
             this.btnbuscar.IconColor = System.Drawing.Color.Black;
             this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscar.IconSize = 16;
-            this.btnbuscar.Location = new System.Drawing.Point(900, 106);
+            this.btnbuscar.Location = new System.Drawing.Point(930, 106);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(37, 24);
             this.btnbuscar.TabIndex = 67;
@@ -626,7 +640,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1019, 568);
+            this.ClientSize = new System.Drawing.Size(1109, 568);
             this.Controls.Add(this.btnactivar);
             this.Controls.Add(this.btndesactivar);
             this.Controls.Add(this.txtindice);

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.lblLista = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(539, 99);
+            this.txtBusqueda.Location = new System.Drawing.Point(550, 99);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(204, 20);
             this.txtBusqueda.TabIndex = 103;
@@ -84,16 +84,17 @@
             // cboBusqueda
             // 
             this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(421, 98);
+            this.cboBusqueda.Location = new System.Drawing.Point(432, 98);
             this.cboBusqueda.Name = "cboBusqueda";
             this.cboBusqueda.Size = new System.Drawing.Size(112, 21);
             this.cboBusqueda.TabIndex = 101;
             // 
             // lblLista
             // 
-            this.lblLista.BackColor = System.Drawing.Color.White;
+            this.lblLista.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblLista.Location = new System.Drawing.Point(327, 16);
+            this.lblLista.Location = new System.Drawing.Point(338, 16);
             this.lblLista.Name = "lblLista";
             this.lblLista.Size = new System.Drawing.Size(677, 51);
             this.lblLista.TabIndex = 99;
@@ -103,15 +104,17 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvdata.BackgroundColor = System.Drawing.Color.White;
+            this.dgvdata.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -125,13 +128,13 @@
             this.EstadoValor,
             this.Estado,
             this.IdItemAsociado});
-            this.dgvdata.Location = new System.Drawing.Point(327, 149);
+            this.dgvdata.Location = new System.Drawing.Point(338, 149);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(677, 316);
             this.dgvdata.TabIndex = 98;
@@ -215,11 +218,12 @@
             // lblPromocion
             // 
             this.lblPromocion.AutoSize = true;
-            this.lblPromocion.BackColor = System.Drawing.Color.White;
+            this.lblPromocion.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPromocion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblPromocion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblPromocion.Location = new System.Drawing.Point(38, 16);
             this.lblPromocion.Name = "lblPromocion";
-            this.lblPromocion.Size = new System.Drawing.Size(208, 25);
+            this.lblPromocion.Size = new System.Drawing.Size(210, 27);
             this.lblPromocion.TabIndex = 97;
             this.lblPromocion.Text = "Datos de la Promoción";
             // 
@@ -251,38 +255,44 @@
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.BackColor = System.Drawing.Color.White;
-            this.lblInicio.Location = new System.Drawing.Point(30, 271);
+            this.lblInicio.BackColor = System.Drawing.SystemColors.Control;
+            this.lblInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicio.Location = new System.Drawing.Point(33, 268);
             this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(68, 13);
+            this.lblInicio.Size = new System.Drawing.Size(78, 17);
             this.lblInicio.TabIndex = 81;
             this.lblInicio.Text = "Fecha Inicio:";
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.BackColor = System.Drawing.Color.White;
-            this.lblValor.Location = new System.Drawing.Point(30, 214);
+            this.lblValor.BackColor = System.Drawing.SystemColors.Control;
+            this.lblValor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(33, 213);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(106, 13);
+            this.lblValor.Size = new System.Drawing.Size(122, 17);
             this.lblValor.TabIndex = 80;
             this.lblValor.Text = "Valor del Descuento:";
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.BackColor = System.Drawing.Color.White;
-            this.lblTipo.Location = new System.Drawing.Point(30, 122);
+            this.lblTipo.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTipo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(33, 120);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(101, 13);
+            this.lblTipo.Size = new System.Drawing.Size(115, 17);
             this.lblTipo.TabIndex = 77;
             this.lblTipo.Text = "Tipo de Descuento:";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.BackColor = System.Drawing.Color.White;
-            this.lblId.Location = new System.Drawing.Point(221, 46);
+            this.lblId.BackColor = System.Drawing.SystemColors.Control;
+            this.lblId.Location = new System.Drawing.Point(221, 49);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 13);
             this.lblId.TabIndex = 76;
@@ -299,17 +309,19 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(30, 77);
+            this.lblNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(33, 73);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(57, 17);
             this.lblNombre.TabIndex = 74;
             this.lblNombre.Text = "Nombre:";
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
@@ -318,9 +330,10 @@
             // 
             // lblBusca
             // 
-            this.lblBusca.BackColor = System.Drawing.Color.White;
+            this.lblBusca.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBusca.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusca.Location = new System.Drawing.Point(327, 77);
+            this.lblBusca.Location = new System.Drawing.Point(338, 77);
             this.lblBusca.Name = "lblBusca";
             this.lblBusca.Size = new System.Drawing.Size(677, 60);
             this.lblBusca.TabIndex = 102;
@@ -338,10 +351,12 @@
             // lblFechaFin
             // 
             this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.BackColor = System.Drawing.Color.White;
-            this.lblFechaFin.Location = new System.Drawing.Point(30, 308);
+            this.lblFechaFin.BackColor = System.Drawing.SystemColors.Control;
+            this.lblFechaFin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.Location = new System.Drawing.Point(33, 305);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(57, 13);
+            this.lblFechaFin.Size = new System.Drawing.Size(66, 17);
             this.lblFechaFin.TabIndex = 109;
             this.lblFechaFin.Text = "Fecha Fin:";
             // 
@@ -377,7 +392,7 @@
             this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
             this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBuscador.IconSize = 16;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(802, 96);
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(813, 96);
             this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             this.btnLimpiarBuscador.Size = new System.Drawing.Size(34, 24);
             this.btnLimpiarBuscador.TabIndex = 105;
@@ -397,7 +412,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 16;
-            this.btnBuscar.Location = new System.Drawing.Point(759, 96);
+            this.btnBuscar.Location = new System.Drawing.Point(770, 96);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(37, 24);
             this.btnBuscar.TabIndex = 104;
@@ -459,7 +474,7 @@
             this.btnActivado.IconColor = System.Drawing.Color.White;
             this.btnActivado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActivado.IconSize = 16;
-            this.btnActivado.Location = new System.Drawing.Point(878, 83);
+            this.btnActivado.Location = new System.Drawing.Point(889, 83);
             this.btnActivado.Name = "btnActivado";
             this.btnActivado.Size = new System.Drawing.Size(105, 23);
             this.btnActivado.TabIndex = 112;
@@ -480,7 +495,7 @@
             this.btnDesactivado.IconColor = System.Drawing.Color.White;
             this.btnDesactivado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDesactivado.IconSize = 16;
-            this.btnDesactivado.Location = new System.Drawing.Point(878, 109);
+            this.btnDesactivado.Location = new System.Drawing.Point(889, 109);
             this.btnDesactivado.Name = "btnDesactivado";
             this.btnDesactivado.Size = new System.Drawing.Size(105, 23);
             this.btnDesactivado.TabIndex = 111;
@@ -531,7 +546,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(248, 43);
+            this.txtId.Location = new System.Drawing.Point(248, 46);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(29, 20);
             this.txtId.TabIndex = 100;
@@ -551,7 +566,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1046, 486);
+            this.ClientSize = new System.Drawing.Size(1180, 486);
             this.Controls.Add(this.txtIdItemAsociado);
             this.Controls.Add(this.cboItemAsociado);
             this.Controls.Add(this.lblItemAsociado);

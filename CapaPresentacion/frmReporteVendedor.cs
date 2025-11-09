@@ -23,8 +23,8 @@ namespace CapaPresentacion
 
 
         // Variables para animación
-        private decimal targetMontoTotal, targetTransferencia, targetEfectivo, targetDebito;
-        private decimal currentMontoTotal, currentTransferencia, currentEfectivo, currentDebito;
+        private decimal targetMontoTotal, targetTransferencia, targetEfectivo, targetDebito, targetAnuladas;
+        private decimal currentMontoTotal, currentTransferencia, currentEfectivo, currentDebito, currentAnuladas;
         private Timer timerContadores = new Timer();
 
         private readonly Usuario _usuarioLogueado;
@@ -33,6 +33,11 @@ namespace CapaPresentacion
             this._usuarioLogueado = objusuarios;
             InitializeComponent();
 
+
+        }
+
+        private void frmReporteVendedor_Load(object sender, EventArgs e)
+        {
 
             // Configuración Timer
             timerContadores.Interval = 20; // Velocidad de animación en ms
@@ -44,8 +49,9 @@ namespace CapaPresentacion
             ActualizarFechasPorPeriodo(cmbPeriodo.SelectedItem.ToString());
 
             CargarTop5Clientes();
-        }
 
+
+        }
 
         // --- Evento cuando cambia la selección del ComboBox ---
         private void cmbPeriodo_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,6 +64,7 @@ namespace CapaPresentacion
             }
         }
 
+ 
         // --- Método que actualiza los rangos de fechas según el período ---
         private void ActualizarFechasPorPeriodo(string periodo)
         {
@@ -117,7 +124,7 @@ namespace CapaPresentacion
             DateTime fechaFin = dtpFechaFin.Value.Date.AddDays(1); // Incluye todo el día
 
             // Reiniciar contadores
-            targetMontoTotal = targetTransferencia = targetEfectivo = targetDebito = 0;
+            targetMontoTotal = targetTransferencia = targetEfectivo = targetDebito = targetAnuladas = 0;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -172,10 +179,26 @@ namespace CapaPresentacion
                         }
                     }
                 }
+
+                // sp para las facturas dadas de bajas 
+                using (SqlCommand cmdAnuladas = new SqlCommand("sp_ReporteTotalAnuladas", con))
+                {
+                    cmdAnuladas.CommandType = CommandType.StoredProcedure;
+                    cmdAnuladas.Parameters.AddWithValue("@Fecha_inicio", fechaInicio);
+                    cmdAnuladas.Parameters.AddWithValue("@Fecha_fin", fechaFin);
+
+                    // Usamos ExecuteScalar porque solo devuelve un número
+                    object resultado = cmdAnuladas.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        // Guardamos el objetivo
+                        targetAnuladas = Convert.ToDecimal(resultado);
+                    }
+                }
             }
 
             // Reiniciar contadores actuales
-            currentMontoTotal = currentTransferencia = currentEfectivo = currentDebito = 0;
+            currentMontoTotal = currentTransferencia = currentEfectivo = currentDebito = currentAnuladas = 0;
 
             // Iniciar animación
             timerContadores.Start();
@@ -267,23 +290,27 @@ namespace CapaPresentacion
             currentTransferencia += (targetTransferencia - currentTransferencia) * speed;
             currentEfectivo += (targetEfectivo - currentEfectivo) * speed;
             currentDebito += (targetDebito - currentDebito) * speed;
+            currentAnuladas += (targetAnuladas - currentAnuladas) * speed;
 
             // Mostrar valores actualizados
             lblMontoTotal.Text = currentMontoTotal.ToString("C2");
             lblTransferencia.Text = currentTransferencia.ToString("C2");
             lblEfectivo.Text = currentEfectivo.ToString("C2");
             lblDebito.Text = currentDebito.ToString("C2");
+            lblTotalAnuladas.Text = Math.Round(currentAnuladas).ToString("00");
 
             // Si todos están suficientemente cerca del objetivo, fijar valores exactos y detener timer
             if (Math.Abs(targetMontoTotal - currentMontoTotal) < 1 &&
                 Math.Abs(targetTransferencia - currentTransferencia) < 1 &&
                 Math.Abs(targetEfectivo - currentEfectivo) < 1 &&
-                Math.Abs(targetDebito - currentDebito) < 1)
+                Math.Abs(targetDebito - currentDebito) < 1 &&
+                Math.Abs(targetAnuladas - currentAnuladas) < 0.1m)
             {
                 lblMontoTotal.Text = targetMontoTotal.ToString("C0", CultureInfo.GetCultureInfo("es-AR"));
                 lblTransferencia.Text = targetTransferencia.ToString("C0", CultureInfo.GetCultureInfo("es-AR"));
                 lblEfectivo.Text = targetEfectivo.ToString("C0", CultureInfo.GetCultureInfo("es-AR"));
                 lblDebito.Text = targetDebito.ToString("C0", CultureInfo.GetCultureInfo("es-AR"));
+                lblTotalAnuladas.Text = targetAnuladas.ToString("00");
                 timerContadores.Stop();
             }
         }
@@ -303,9 +330,90 @@ namespace CapaPresentacion
 
                 // Mostrar en DataGridView 
                 dgvTopClientes.DataSource = dt;
+                EstilizarGridTopClientes();
             }
 
 
+        }
+
+        // (Asegúrate de tener "using System.Drawing;" al inicio)
+
+        private void EstilizarGridTopClientes()
+        {
+            // --- 1. APARIENCIA GENERAL (Estilo "Bajo Stock") ---
+            dgvTopClientes.BorderStyle = BorderStyle.None;
+            dgvTopClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTopClientes.GridColor = Color.FromArgb(235, 235, 235); // Línea suave
+            dgvTopClientes.AllowUserToAddRows = false;
+            dgvTopClientes.AllowUserToDeleteRows = false;
+            dgvTopClientes.ReadOnly = true;
+            dgvTopClientes.RowHeadersVisible = false;
+            dgvTopClientes.BackgroundColor = Color.White;
+            dgvTopClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTopClientes.RowTemplate.Height = 30;
+
+            // --- 2. ESTILO DE ENCABEZADOS ---
+            dgvTopClientes.EnableHeadersVisualStyles = false;
+            dgvTopClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvTopClientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            dgvTopClientes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            dgvTopClientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(60, 60, 60);
+            dgvTopClientes.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvTopClientes.ColumnHeadersHeight = 35;
+
+            // --- 3. ESTILO DE FILAS ---
+            dgvTopClientes.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvTopClientes.RowsDefaultCellStyle.Font = new Font("Segoe UI", 9F);
+            dgvTopClientes.RowsDefaultCellStyle.ForeColor = Color.DimGray;
+            dgvTopClientes.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(235, 243, 250);
+            dgvTopClientes.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // --- 4. AJUSTE DE COLUMNAS ---
+            if (dgvTopClientes.Columns["id_cliente"] != null)
+                dgvTopClientes.Columns["id_cliente"].Visible = false; // Ocultamos el ID
+
+            if (dgvTopClientes.Columns["Cliente"] != null)
+                dgvTopClientes.Columns["Cliente"].FillWeight = 40; // 40%
+
+            if (dgvTopClientes.Columns["Cantidad_Compras"] != null)
+            {
+                dgvTopClientes.Columns["Cantidad_Compras"].HeaderText = "Compras";
+                dgvTopClientes.Columns["Cantidad_Compras"].FillWeight = 25; // 25%
+                dgvTopClientes.Columns["Cantidad_Compras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvTopClientes.Columns["Cantidad_Compras"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            if (dgvTopClientes.Columns["Promedio_Gasto"] != null)
+            {
+                dgvTopClientes.Columns["Promedio_Gasto"].HeaderText = "Gasto Promedio";
+                dgvTopClientes.Columns["Promedio_Gasto"].FillWeight = 35; // 35%
+                dgvTopClientes.Columns["Promedio_Gasto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvTopClientes.Columns["Promedio_Gasto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+
+            // --- 5. CONECTAR EVENTO DE FORMATO (Para el "$") ---
+            dgvTopClientes.CellFormatting -= dgvTopClientes_CellFormatting;
+            dgvTopClientes.CellFormatting += dgvTopClientes_CellFormatting;
+        }
+
+        // (Asegúrate de tener "using System.Globalization;" al inicio)
+
+        private void dgvTopClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Solo nos interesa la columna "PromedioGasto"
+            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvTopClientes.Columns[e.ColumnIndex].Name != "Promedio_Gasto")
+            {
+                return;
+            }
+
+            if (e.Value != null && e.Value != DBNull.Value)
+            {
+                decimal monto = (decimal)e.Value;
+
+                // Formateamos como moneda (ej: $14,166.67)
+                e.Value = monto.ToString("C2", CultureInfo.GetCultureInfo("es-AR"));
+                e.FormattingApplied = true;
+            }
         }
 
     }

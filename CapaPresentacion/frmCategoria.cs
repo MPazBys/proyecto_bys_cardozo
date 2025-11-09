@@ -26,6 +26,7 @@ namespace CapaPresentacion
 
 
             CargarCategorias();
+            LimpiarCampos();
         }
 
         private void CargarCategorias()
@@ -57,12 +58,31 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Categoría registrada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarCategorias();
-                txtNombreCategoria.Clear();
+                LimpiarCampos();
             }
             else
             {
                 MessageBox.Show(mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+
+        private void ActualizarEstadoBotones(bool modoInsercion)
+        {
+            // Si es "Modo Inserción", habilitamos Guardar y deshabilitamos los demás.
+            btnGuardar.Enabled = modoInsercion;
+            btnEditar.Enabled = !modoInsercion;
+            btnEliminar.Enabled = !modoInsercion;
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombreCategoria.Clear();
+            categoriaSeleccionada = null;
+            indiceSeleccionado = -1; 
+
+            // Resetea los botones al estado inicial (listos para Guardar)
+            ActualizarEstadoBotones(true);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -83,7 +103,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Categoría actualizada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarCategorias();
-                txtNombreCategoria.Clear();
+                LimpiarCampos();
                 categoriaSeleccionada = null;
             }
             else
@@ -112,7 +132,7 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("Categoría eliminada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarCategorias();
-                    txtNombreCategoria.Clear();
+                    LimpiarCampos();
                     categoriaSeleccionada = null;
                 }
                 else
@@ -138,6 +158,16 @@ namespace CapaPresentacion
                 };
 
                 txtNombreCategoria.Text = nombre;
+
+                ActualizarEstadoBotones(false);
+            }
+        }
+
+        private void txtNombreCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ' )
+            {
+                e.Handled = true;
             }
         }
 

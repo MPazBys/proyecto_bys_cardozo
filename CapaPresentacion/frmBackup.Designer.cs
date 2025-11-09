@@ -69,7 +69,8 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.BackColor = System.Drawing.Color.White;
+            this.lblTitulo.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTitulo.Location = new System.Drawing.Point(12, 20);
             this.lblTitulo.Name = "lblTitulo";
@@ -80,7 +81,8 @@
             // 
             // lblBD
             // 
-            this.lblBD.BackColor = System.Drawing.Color.White;
+            this.lblBD.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBD.Location = new System.Drawing.Point(12, 78);
             this.lblBD.Name = "lblBD";
@@ -112,7 +114,8 @@
             // 
             // lblRuta
             // 
-            this.lblRuta.BackColor = System.Drawing.Color.White;
+            this.lblRuta.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRuta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRuta.Location = new System.Drawing.Point(12, 135);
             this.lblRuta.Name = "lblRuta";
@@ -131,7 +134,7 @@
             // 
             // btnbackup
             // 
-            this.btnbackup.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnbackup.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnbackup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbackup.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -143,7 +146,7 @@
             this.btnbackup.IconSize = 16;
             this.btnbackup.Location = new System.Drawing.Point(431, 209);
             this.btnbackup.Name = "btnbackup";
-            this.btnbackup.Size = new System.Drawing.Size(124, 30);
+            this.btnbackup.Size = new System.Drawing.Size(126, 30);
             this.btnbackup.TabIndex = 89;
             this.btnbackup.Text = "Back Up";
             this.btnbackup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(569, 263);
+            this.ClientSize = new System.Drawing.Size(783, 355);
             this.Controls.Add(this.btnbackup);
             this.Controls.Add(this.txtRuta);
             this.Controls.Add(this.btnRuta);

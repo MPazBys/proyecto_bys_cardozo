@@ -53,17 +53,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(12, 183);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 24);
+            this.label1.Size = new System.Drawing.Size(207, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "SISTEMA DE VENTAS";
             // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.iconPictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -93,20 +95,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(281, 39);
+            this.label2.Location = new System.Drawing.Point(284, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(103, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nro Documento";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(281, 98);
+            this.label3.Location = new System.Drawing.Point(285, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(78, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "Contraseña";
             // 

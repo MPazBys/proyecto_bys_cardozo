@@ -64,19 +64,20 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 409);
+            this.label1.Size = new System.Drawing.Size(217, 406);
             this.label1.TabIndex = 1;
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
             this.dgvdata.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvdata.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,7 +97,7 @@
             this.FechaCreacion,
             this.EstadoValor,
             this.Estado});
-            this.dgvdata.Location = new System.Drawing.Point(223, 85);
+            this.dgvdata.Location = new System.Drawing.Point(261, 85);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
@@ -167,9 +168,10 @@
             // 
             // lbllista
             // 
-            this.lbllista.BackColor = System.Drawing.Color.White;
+            this.lbllista.BackColor = System.Drawing.SystemColors.Control;
+            this.lbllista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbllista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllista.Location = new System.Drawing.Point(223, 20);
+            this.lbllista.Location = new System.Drawing.Point(261, 20);
             this.lbllista.Name = "lbllista";
             this.lbllista.Size = new System.Drawing.Size(668, 53);
             this.lbllista.TabIndex = 9;
@@ -179,14 +181,14 @@
             // cbobusqueda
             // 
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(552, 36);
+            this.cbobusqueda.Location = new System.Drawing.Point(590, 36);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(94, 21);
             this.cbobusqueda.TabIndex = 12;
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(656, 37);
+            this.txtbusqueda.Location = new System.Drawing.Point(694, 37);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(101, 20);
             this.txtbusqueda.TabIndex = 13;
@@ -202,7 +204,7 @@
             this.btnbuscar.IconColor = System.Drawing.Color.Black;
             this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscar.IconSize = 16;
-            this.btnbuscar.Location = new System.Drawing.Point(788, 33);
+            this.btnbuscar.Location = new System.Drawing.Point(826, 33);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(37, 23);
             this.btnbuscar.TabIndex = 14;
@@ -220,7 +222,7 @@
             this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
             this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiarbuscador.IconSize = 16;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(833, 33);
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(871, 33);
             this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             this.btnlimpiarbuscador.Size = new System.Drawing.Size(37, 23);
             this.btnlimpiarbuscador.TabIndex = 15;
@@ -230,17 +232,18 @@
             // lblbuscar
             // 
             this.lblbuscar.AutoSize = true;
-            this.lblbuscar.BackColor = System.Drawing.Color.White;
-            this.lblbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbuscar.Location = new System.Drawing.Point(495, 37);
+            this.lblbuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.lblbuscar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbuscar.Location = new System.Drawing.Point(533, 38);
             this.lblbuscar.Name = "lblbuscar";
-            this.lblbuscar.Size = new System.Drawing.Size(48, 15);
+            this.lblbuscar.Size = new System.Drawing.Size(54, 18);
             this.lblbuscar.TabIndex = 16;
             this.lblbuscar.Text = "Buscar:";
             // 
             // txtcuit
             // 
-            this.txtcuit.Location = new System.Drawing.Point(24, 85);
+            this.txtcuit.Location = new System.Drawing.Point(24, 87);
             this.txtcuit.Name = "txtcuit";
             this.txtcuit.Size = new System.Drawing.Size(166, 20);
             this.txtcuit.TabIndex = 17;
@@ -249,60 +252,63 @@
             // lblcuit
             // 
             this.lblcuit.AutoSize = true;
-            this.lblcuit.BackColor = System.Drawing.Color.White;
+            this.lblcuit.BackColor = System.Drawing.SystemColors.Control;
+            this.lblcuit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblcuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcuit.Location = new System.Drawing.Point(21, 66);
+            this.lblcuit.Location = new System.Drawing.Point(24, 66);
             this.lblcuit.Name = "lblcuit";
-            this.lblcuit.Size = new System.Drawing.Size(41, 16);
+            this.lblcuit.Size = new System.Drawing.Size(43, 18);
             this.lblcuit.TabIndex = 18;
             this.lblcuit.Text = "CUIT:";
             // 
             // lbldetallecliente
             // 
             this.lbldetallecliente.AutoSize = true;
-            this.lbldetallecliente.BackColor = System.Drawing.Color.White;
+            this.lbldetallecliente.BackColor = System.Drawing.SystemColors.Control;
+            this.lbldetallecliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbldetallecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldetallecliente.Location = new System.Drawing.Point(20, 23);
             this.lbldetallecliente.Name = "lbldetallecliente";
-            this.lbldetallecliente.Size = new System.Drawing.Size(136, 22);
+            this.lbldetallecliente.Size = new System.Drawing.Size(138, 24);
             this.lbldetallecliente.TabIndex = 22;
             this.lbldetallecliente.Text = "Detalle Clientes";
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(24, 135);
+            this.txtnombre.Location = new System.Drawing.Point(24, 138);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(166, 20);
             this.txtnombre.TabIndex = 23;
-          
             this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             this.txtnombre.Leave += new System.EventHandler(this.txtnombre_Leave);
             // 
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.BackColor = System.Drawing.Color.White;
+            this.lblnombre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblnombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.Location = new System.Drawing.Point(21, 117);
+            this.lblnombre.Location = new System.Drawing.Point(24, 117);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(149, 16);
+            this.lblnombre.Size = new System.Drawing.Size(151, 18);
             this.lblnombre.TabIndex = 24;
             this.lblnombre.Text = "Razón Social / Nombre:";
             // 
             // lblemail
             // 
             this.lblemail.AutoSize = true;
-            this.lblemail.BackColor = System.Drawing.Color.White;
+            this.lblemail.BackColor = System.Drawing.SystemColors.Control;
+            this.lblemail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblemail.Location = new System.Drawing.Point(22, 166);
+            this.lblemail.Location = new System.Drawing.Point(24, 167);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(44, 16);
+            this.lblemail.Size = new System.Drawing.Size(46, 18);
             this.lblemail.TabIndex = 25;
             this.lblemail.Text = "Email:";
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(24, 183);
+            this.txtemail.Location = new System.Drawing.Point(24, 189);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(166, 20);
             this.txtemail.TabIndex = 26;
@@ -414,7 +420,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(895, 409);
+            this.ClientSize = new System.Drawing.Size(991, 406);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnactivar);

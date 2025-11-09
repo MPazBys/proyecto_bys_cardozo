@@ -145,5 +145,62 @@ namespace CapaDatos
 
             return resultado;
         }
+
+       
+        public DataSet ObtenerVentaCompleta(int idVenta)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.cadena))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_ObtenerVentaCompleta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds); // Llena el DataSet con las 3 tablas
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message); 
+                ds = null; // Devuelve null si falló
+            }
+            return ds;
+        }
+
+        // sp para las facturas dadas de bajas 
+
+        public int ReporteTotalAnuladas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            int total = 0;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(Conexion.cadena))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteTotalAnuladas", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@inicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("@fin", fechaFin);
+
+                    
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != null)
+                    {
+                        total = Convert.ToInt32(resultado);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                total = 0; 
+                Console.WriteLine(ex.Message);
+            }
+            return total;
+        }
+
     }
 }

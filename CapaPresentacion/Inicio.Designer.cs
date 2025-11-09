@@ -114,7 +114,7 @@
             this.menuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.menuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuregistrarventa.Name = "menuregistrarventa";
-            this.menuregistrarventa.Size = new System.Drawing.Size(180, 22);
+            this.menuregistrarventa.Size = new System.Drawing.Size(128, 22);
             this.menuregistrarventa.Text = "Registrar";
             this.menuregistrarventa.Click += new System.EventHandler(this.menuregistrarventa_Click);
             // 
@@ -124,7 +124,7 @@
             this.menuverdetalle.IconColor = System.Drawing.Color.Black;
             this.menuverdetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuverdetalle.Name = "menuverdetalle";
-            this.menuverdetalle.Size = new System.Drawing.Size(180, 22);
+            this.menuverdetalle.Size = new System.Drawing.Size(128, 22);
             this.menuverdetalle.Text = "Ver detalle";
             this.menuverdetalle.Click += new System.EventHandler(this.menuverdetalle_Click);
             // 
@@ -230,16 +230,17 @@
             // 
             this.LTitulo.AutoSize = true;
             this.LTitulo.BackColor = System.Drawing.Color.MidnightBlue;
-            this.LTitulo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.White;
             this.LTitulo.Location = new System.Drawing.Point(12, 9);
             this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(198, 31);
+            this.LTitulo.Size = new System.Drawing.Size(160, 29);
             this.LTitulo.TabIndex = 2;
             this.LTitulo.Text = "Libreria MyP";
             // 
             // contenedor
             // 
+            this.contenedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 121);
             this.contenedor.Name = "contenedor";

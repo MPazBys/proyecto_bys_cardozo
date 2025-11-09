@@ -1,7 +1,8 @@
-﻿using CapaEntidad;
-using CapaDatos;
+﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,17 @@ namespace CapaNegocio
         public List<ItemDescuento> ObtenerItemsAsociados(string tipo)
         {
             return dao.ObtenerItemsAsociados(tipo);
+        }
+
+        public DataTable ListarPromocionesVigentes()
+        {
+            return dao.ListarPromocionesVigentes();
+        }
+
+        public DataTable ReportePromocionesMasUsadas(DateTime fechaInicio, DateTime fechaFin)
+        {
+          
+            return dao.ReportePromocionesMasUsadas(fechaInicio, fechaFin);
         }
     }
 }

@@ -49,37 +49,41 @@
             this.lblDebito = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pnlResumen = new System.Windows.Forms.Panel();
+            this.pnlMontoTotal = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMontoTotal = new System.Windows.Forms.Label();
             this.dgvTopClientes = new System.Windows.Forms.DataGridView();
             this.chartResumenVenta = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblMontoTotal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlMontoTotal = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalAnuladas = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pnlTransferencia.SuspendLayout();
             this.pnlEfectivo.SuspendLayout();
             this.pnlDebito.SuspendLayout();
             this.pnlResumen.SuspendLayout();
+            this.pnlMontoTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartResumenVenta)).BeginInit();
-            this.pnlMontoTotal.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Location = new System.Drawing.Point(114, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(575, 170);
+            this.label4.Size = new System.Drawing.Size(575, 204);
             this.label4.TabIndex = 10;
             this.label4.Text = "Reportes Ventas:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.cmbPeriodo);
             this.groupBox1.Controls.Add(this.btnAplicarFiltro);
             this.groupBox1.Controls.Add(this.dtpFechaFin);
@@ -87,9 +91,9 @@
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(31, 34);
+            this.groupBox1.Location = new System.Drawing.Point(133, 105);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 133);
+            this.groupBox1.Size = new System.Drawing.Size(538, 143);
             this.groupBox1.TabIndex = 88;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Periodo:";
@@ -109,7 +113,7 @@
             this.btnAplicarFiltro.BackColor = System.Drawing.Color.LightBlue;
             this.btnAplicarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAplicarFiltro.ForeColor = System.Drawing.Color.Black;
-            this.btnAplicarFiltro.Location = new System.Drawing.Point(415, 98);
+            this.btnAplicarFiltro.Location = new System.Drawing.Point(415, 100);
             this.btnAplicarFiltro.Name = "btnAplicarFiltro";
             this.btnAplicarFiltro.Size = new System.Drawing.Size(99, 29);
             this.btnAplicarFiltro.TabIndex = 58;
@@ -247,61 +251,16 @@
             // 
             // pnlResumen
             // 
-            this.pnlResumen.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pnlResumen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlResumen.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlResumen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlResumen.Controls.Add(this.pnlDebito);
             this.pnlResumen.Controls.Add(this.pnlMontoTotal);
             this.pnlResumen.Controls.Add(this.pnlEfectivo);
             this.pnlResumen.Controls.Add(this.pnlTransferencia);
-            this.pnlResumen.Location = new System.Drawing.Point(12, 185);
+            this.pnlResumen.Location = new System.Drawing.Point(114, 279);
             this.pnlResumen.Name = "pnlResumen";
             this.pnlResumen.Size = new System.Drawing.Size(455, 244);
             this.pnlResumen.TabIndex = 93;
-            // 
-            // dgvTopClientes
-            // 
-            this.dgvTopClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTopClientes.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dgvTopClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTopClientes.Location = new System.Drawing.Point(593, 9);
-            this.dgvTopClientes.Name = "dgvTopClientes";
-            this.dgvTopClientes.Size = new System.Drawing.Size(437, 170);
-            this.dgvTopClientes.TabIndex = 94;
-            // 
-            // chartResumenVenta
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartResumenVenta.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartResumenVenta.Legends.Add(legend1);
-            this.chartResumenVenta.Location = new System.Drawing.Point(473, 185);
-            this.chartResumenVenta.Name = "chartResumenVenta";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartResumenVenta.Series.Add(series1);
-            this.chartResumenVenta.Size = new System.Drawing.Size(557, 244);
-            this.chartResumenVenta.TabIndex = 96;
-            this.chartResumenVenta.Text = "chart1";
-            // 
-            // lblMontoTotal
-            // 
-            this.lblMontoTotal.AutoSize = true;
-            this.lblMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoTotal.Location = new System.Drawing.Point(41, 60);
-            this.lblMontoTotal.Name = "lblMontoTotal";
-            this.lblMontoTotal.Size = new System.Drawing.Size(71, 29);
-            this.lblMontoTotal.TabIndex = 0;
-            this.lblMontoTotal.Text = "$0,00";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 41);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "MONTO   TOTAL         VENTAS:";
             // 
             // pnlMontoTotal
             // 
@@ -314,12 +273,90 @@
             this.pnlMontoTotal.Size = new System.Drawing.Size(194, 100);
             this.pnlMontoTotal.TabIndex = 89;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 41);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "MONTO   TOTAL         VENTAS:";
+            // 
+            // lblMontoTotal
+            // 
+            this.lblMontoTotal.AutoSize = true;
+            this.lblMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoTotal.Location = new System.Drawing.Point(41, 60);
+            this.lblMontoTotal.Name = "lblMontoTotal";
+            this.lblMontoTotal.Size = new System.Drawing.Size(71, 29);
+            this.lblMontoTotal.TabIndex = 0;
+            this.lblMontoTotal.Text = "$0,00";
+            // 
+            // dgvTopClientes
+            // 
+            this.dgvTopClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTopClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvTopClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTopClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTopClientes.Location = new System.Drawing.Point(695, 63);
+            this.dgvTopClientes.Name = "dgvTopClientes";
+            this.dgvTopClientes.Size = new System.Drawing.Size(437, 144);
+            this.dgvTopClientes.TabIndex = 94;
+            // 
+            // chartResumenVenta
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartResumenVenta.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartResumenVenta.Legends.Add(legend1);
+            this.chartResumenVenta.Location = new System.Drawing.Point(575, 279);
+            this.chartResumenVenta.Name = "chartResumenVenta";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartResumenVenta.Series.Add(series1);
+            this.chartResumenVenta.Size = new System.Drawing.Size(557, 244);
+            this.chartResumenVenta.TabIndex = 96;
+            this.chartResumenVenta.Text = "chart1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblTotalAnuladas);
+            this.panel1.Location = new System.Drawing.Point(695, 218);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(437, 49);
+            this.panel1.TabIndex = 97;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(323, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "TOTAL FACTURAS DADAS DE BAJA:";
+            // 
+            // lblTotalAnuladas
+            // 
+            this.lblTotalAnuladas.AutoSize = true;
+            this.lblTotalAnuladas.Font = new System.Drawing.Font("Javanese Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAnuladas.ForeColor = System.Drawing.Color.Maroon;
+            this.lblTotalAnuladas.Location = new System.Drawing.Point(353, -2);
+            this.lblTotalAnuladas.Name = "lblTotalAnuladas";
+            this.lblTotalAnuladas.Size = new System.Drawing.Size(51, 54);
+            this.lblTotalAnuladas.TabIndex = 0;
+            this.lblTotalAnuladas.Text = "00";
+            // 
             // frmReporteVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1059, 463);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1265, 625);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartResumenVenta);
             this.Controls.Add(this.dgvTopClientes);
             this.Controls.Add(this.pnlResumen);
@@ -327,6 +364,7 @@
             this.Controls.Add(this.label4);
             this.Name = "frmReporteVendedor";
             this.Text = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReporteVendedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlTransferencia.ResumeLayout(false);
@@ -336,10 +374,12 @@
             this.pnlDebito.ResumeLayout(false);
             this.pnlDebito.PerformLayout();
             this.pnlResumen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTopClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartResumenVenta)).EndInit();
             this.pnlMontoTotal.ResumeLayout(false);
             this.pnlMontoTotal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResumenVenta)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +409,8 @@
         private System.Windows.Forms.Panel pnlMontoTotal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMontoTotal;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalAnuladas;
     }
 }

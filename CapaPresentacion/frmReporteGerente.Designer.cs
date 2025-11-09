@@ -28,436 +28,576 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dvgdata = new System.Windows.Forms.DataGridView();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBusqueda = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.cmbPeriodo = new System.Windows.Forms.ComboBox();
+            this.btnAplicarFiltro = new System.Windows.Forms.Button();
+            this.pnlResumen = new System.Windows.Forms.Panel();
+            this.pnlDebito = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblMejorVendedor = new System.Windows.Forms.Label();
+            this.pnlMontoTotal = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgdata)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalVentas = new System.Windows.Forms.Label();
+            this.pnlEfectivo = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblLibrosVendidos = new System.Windows.Forms.Label();
+            this.pnlTransferencia = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.lblIngresosTotales = new System.Windows.Forms.Label();
+            this.chartTopLibros = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPeorLibros = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgvPromociones = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chartPromociones = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvPromocionesUsadas = new System.Windows.Forms.DataGridView();
+            this.dgvVendedores = new System.Windows.Forms.DataGridView();
+            this.timerContadores = new System.Windows.Forms.Timer(this.components);
+            this.pnlResumen.SuspendLayout();
+            this.pnlDebito.SuspendLayout();
+            this.pnlMontoTotal.SuspendLayout();
+            this.pnlEfectivo.SuspendLayout();
+            this.pnlTransferencia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTopLibros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPeorLibros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromociones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPromociones)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromocionesUsadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendedores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dvgdata
+            // dtpFechaFin
             // 
-            this.dvgdata.AllowUserToAddRows = false;
-            this.dvgdata.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dvgdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FechaRegistro,
-            this.Descripcion,
-            this.Imagen,
-            this.Estado,
-            this.Autor,
-            this.Categoria,
-            this.Titulo,
-            this.PrecioLibro,
-            this.Stock});
-            this.dvgdata.Location = new System.Drawing.Point(16, 159);
-            this.dvgdata.MultiSelect = false;
-            this.dvgdata.Name = "dvgdata";
-            this.dvgdata.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dvgdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dvgdata.RowTemplate.Height = 30;
-            this.dvgdata.Size = new System.Drawing.Size(941, 242);
-            this.dvgdata.TabIndex = 85;
-            // 
-            // FechaRegistro
-            // 
-            this.FechaRegistro.HeaderText = "Fecha Regristro";
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
-            this.FechaRegistro.Width = 90;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Imagen
-            // 
-            this.Imagen.HeaderText = "Imagen";
-            this.Imagen.Name = "Imagen";
-            this.Imagen.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Autor
-            // 
-            this.Autor.HeaderText = "Autor";
-            this.Autor.Name = "Autor";
-            this.Autor.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // Titulo
-            // 
-            this.Titulo.HeaderText = "Título";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            // 
-            // PrecioLibro
-            // 
-            this.PrecioLibro.HeaderText = "Precio Libro";
-            this.PrecioLibro.Name = "PrecioLibro";
-            this.PrecioLibro.ReadOnly = true;
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            // 
-            // textBusqueda
-            // 
-            this.textBusqueda.Location = new System.Drawing.Point(643, 125);
-            this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(167, 20);
-            this.textBusqueda.TabIndex = 82;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(450, 127);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(159, 21);
-            this.comboBox2.TabIndex = 81;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(354, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 15);
-            this.label6.TabIndex = 80;
-            this.label6.Text = "Buscar por:";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(12, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(995, 344);
-            this.label3.TabIndex = 79;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(311, 54);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(112, 21);
-            this.dateTimePicker2.TabIndex = 75;
-            this.dateTimePicker2.Value = new System.DateTime(2025, 9, 22, 15, 52, 23, 0);
+            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFin.Location = new System.Drawing.Point(623, 48);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(112, 21);
+            this.dtpFechaFin.TabIndex = 75;
+            this.dtpFechaFin.Value = new System.DateTime(2025, 9, 22, 15, 52, 23, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 58);
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(540, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.Size = new System.Drawing.Size(77, 18);
             this.label1.TabIndex = 74;
             this.label1.Text = "Fecha Fin:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 58);
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(268, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 15);
+            this.label5.Size = new System.Drawing.Size(91, 18);
             this.label5.TabIndex = 73;
             this.label5.Text = "Fecha Inicio:";
             // 
-            // dateTimePicker1
+            // dtpFechaInicio
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(111, 55);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 21);
-            this.dateTimePicker1.TabIndex = 72;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 9, 22, 15, 52, 16, 0);
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(365, 48);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(112, 21);
+            this.dtpFechaInicio.TabIndex = 72;
+            this.dtpFechaInicio.Value = new System.DateTime(2025, 9, 22, 15, 52, 16, 0);
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label4.Location = new System.Drawing.Point(12, 17);
+            this.label4.Location = new System.Drawing.Point(189, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(995, 78);
+            this.label4.Size = new System.Drawing.Size(965, 78);
             this.label4.TabIndex = 71;
-            this.label4.Text = "Reportes Libros:";
+            this.label4.Text = "                                         Panel Gerencial - Resumen de Ventas y Pr" +
+    "omociones";
             // 
-            // comboBox1
+            // cmbPeriodo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(603, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 21);
-            this.comboBox1.TabIndex = 90;
+            this.cmbPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPeriodo.FormattingEnabled = true;
+            this.cmbPeriodo.Location = new System.Drawing.Point(801, 46);
+            this.cmbPeriodo.Name = "cmbPeriodo";
+            this.cmbPeriodo.Size = new System.Drawing.Size(151, 23);
+            this.cmbPeriodo.TabIndex = 95;
+            this.cmbPeriodo.Text = "Seleccionar período:";
+            this.cmbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cmbPeriodo_SelectedIndexChanged);
             // 
-            // label2
+            // btnAplicarFiltro
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(535, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 89;
-            this.label2.Text = "Vendedor:";
+            this.btnAplicarFiltro.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAplicarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicarFiltro.ForeColor = System.Drawing.Color.Azure;
+            this.btnAplicarFiltro.Location = new System.Drawing.Point(1031, 26);
+            this.btnAplicarFiltro.Name = "btnAplicarFiltro";
+            this.btnAplicarFiltro.Size = new System.Drawing.Size(113, 38);
+            this.btnAplicarFiltro.TabIndex = 96;
+            this.btnAplicarFiltro.Text = "Aplicar Filtro";
+            this.btnAplicarFiltro.UseVisualStyleBackColor = false;
+            this.btnAplicarFiltro.Click += new System.EventHandler(this.btnAplicarFiltro_Click);
             // 
-            // textBox1
+            // pnlResumen
             // 
-            this.textBox1.Location = new System.Drawing.Point(749, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 92;
+            this.pnlResumen.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlResumen.Controls.Add(this.pnlDebito);
+            this.pnlResumen.Controls.Add(this.pnlMontoTotal);
+            this.pnlResumen.Controls.Add(this.pnlEfectivo);
+            this.pnlResumen.Controls.Add(this.pnlTransferencia);
+            this.pnlResumen.Location = new System.Drawing.Point(131, 70);
+            this.pnlResumen.Name = "pnlResumen";
+            this.pnlResumen.Size = new System.Drawing.Size(1041, 122);
+            this.pnlResumen.TabIndex = 97;
             // 
-            // iconButton5
+            // pnlDebito
             // 
-            this.iconButton5.BackColor = System.Drawing.Color.White;
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.Color.Violet;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 16;
-            this.iconButton5.Location = new System.Drawing.Point(939, 54);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(37, 23);
-            this.iconButton5.TabIndex = 94;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.BackColor = System.Drawing.Color.White;
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.ForeColor = System.Drawing.Color.Black;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 16;
-            this.iconButton6.Location = new System.Drawing.Point(896, 54);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(37, 23);
-            this.iconButton6.TabIndex = 93;
-            this.iconButton6.UseVisualStyleBackColor = false;
+            this.pnlDebito.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlDebito.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDebito.Controls.Add(this.iconButton4);
+            this.pnlDebito.Controls.Add(this.label7);
+            this.pnlDebito.Controls.Add(this.lblMejorVendedor);
+            this.pnlDebito.Location = new System.Drawing.Point(793, 12);
+            this.pnlDebito.Name = "pnlDebito";
+            this.pnlDebito.Size = new System.Drawing.Size(245, 100);
+            this.pnlDebito.TabIndex = 92;
             // 
             // iconButton4
             // 
-            this.iconButton4.BackColor = System.Drawing.Color.SkyBlue;
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton4.BackColor = System.Drawing.Color.RosyBrown;
+            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.Black;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.ForeColor = System.Drawing.Color.Tan;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 16;
-            this.iconButton4.Location = new System.Drawing.Point(719, 412);
+            this.iconButton4.Location = new System.Drawing.Point(3, 24);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(201, 30);
-            this.iconButton4.TabIndex = 88;
-            this.iconButton4.Text = "Total ventas";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.Size = new System.Drawing.Size(37, 44);
+            this.iconButton4.TabIndex = 100;
             this.iconButton4.UseVisualStyleBackColor = false;
             // 
-            // iconButton3
+            // label7
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.SkyBlue;
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Black;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 16;
-            this.iconButton3.Location = new System.Drawing.Point(390, 412);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(201, 30);
-            this.iconButton3.TabIndex = 87;
-            this.iconButton3.Text = "Libros más vendidos";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(46, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 25);
+            this.label7.TabIndex = 99;
+            this.label7.Text = "MEJOR VENDEDOR:";
             // 
-            // iconButton2
+            // lblMejorVendedor
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.SkyBlue;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 16;
-            this.iconButton2.Location = new System.Drawing.Point(60, 412);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(201, 30);
-            this.iconButton2.TabIndex = 86;
-            this.iconButton2.Text = "Recaudación";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.lblMejorVendedor.AutoSize = true;
+            this.lblMejorVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMejorVendedor.ForeColor = System.Drawing.Color.White;
+            this.lblMejorVendedor.Location = new System.Drawing.Point(62, 48);
+            this.lblMejorVendedor.Name = "lblMejorVendedor";
+            this.lblMejorVendedor.Size = new System.Drawing.Size(127, 24);
+            this.lblMejorVendedor.TabIndex = 4;
+            this.lblMejorVendedor.Text = "JUAN PERES";
             // 
-            // btnLimpiar
+            // pnlMontoTotal
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Violet;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 16;
-            this.btnLimpiar.Location = new System.Drawing.Point(911, 123);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(37, 23);
-            this.btnLimpiar.TabIndex = 84;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.pnlMontoTotal.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMontoTotal.Controls.Add(this.iconButton1);
+            this.pnlMontoTotal.Controls.Add(this.label3);
+            this.pnlMontoTotal.Controls.Add(this.lblTotalVentas);
+            this.pnlMontoTotal.Location = new System.Drawing.Point(14, 12);
+            this.pnlMontoTotal.Name = "pnlMontoTotal";
+            this.pnlMontoTotal.Size = new System.Drawing.Size(245, 100);
+            this.pnlMontoTotal.TabIndex = 89;
             // 
             // iconButton1
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(853, 123);
+            this.iconButton1.Location = new System.Drawing.Point(-2, 18);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(37, 23);
-            this.iconButton1.TabIndex = 83;
+            this.iconButton1.Size = new System.Drawing.Size(52, 54);
+            this.iconButton1.TabIndex = 2;
             this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(53, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 30);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "TOTAL VENTAS:";
+            // 
+            // lblTotalVentas
+            // 
+            this.lblTotalVentas.AutoSize = true;
+            this.lblTotalVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVentas.ForeColor = System.Drawing.Color.White;
+            this.lblTotalVentas.Location = new System.Drawing.Point(98, 43);
+            this.lblTotalVentas.Name = "lblTotalVentas";
+            this.lblTotalVentas.Size = new System.Drawing.Size(39, 29);
+            this.lblTotalVentas.TabIndex = 0;
+            this.lblTotalVentas.Text = "00";
+            // 
+            // pnlEfectivo
+            // 
+            this.pnlEfectivo.BackColor = System.Drawing.Color.Tan;
+            this.pnlEfectivo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlEfectivo.Controls.Add(this.iconButton3);
+            this.pnlEfectivo.Controls.Add(this.label2);
+            this.pnlEfectivo.Controls.Add(this.lblLibrosVendidos);
+            this.pnlEfectivo.Location = new System.Drawing.Point(534, 12);
+            this.pnlEfectivo.Name = "pnlEfectivo";
+            this.pnlEfectivo.Size = new System.Drawing.Size(245, 100);
+            this.pnlEfectivo.TabIndex = 91;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton3.BackColor = System.Drawing.Color.Tan;
+            this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.ForeColor = System.Drawing.Color.Tan;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.BookBookmark;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(3, 24);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(37, 44);
+            this.iconButton3.TabIndex = 99;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(46, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 25);
+            this.label2.TabIndex = 98;
+            this.label2.Text = "LIBROS VENDIDOS:";
+            // 
+            // lblLibrosVendidos
+            // 
+            this.lblLibrosVendidos.AutoSize = true;
+            this.lblLibrosVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrosVendidos.ForeColor = System.Drawing.Color.White;
+            this.lblLibrosVendidos.Location = new System.Drawing.Point(103, 43);
+            this.lblLibrosVendidos.Name = "lblLibrosVendidos";
+            this.lblLibrosVendidos.Size = new System.Drawing.Size(39, 29);
+            this.lblLibrosVendidos.TabIndex = 4;
+            this.lblLibrosVendidos.Text = "00";
+            // 
+            // pnlTransferencia
+            // 
+            this.pnlTransferencia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlTransferencia.BackColor = System.Drawing.Color.YellowGreen;
+            this.pnlTransferencia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTransferencia.Controls.Add(this.label6);
+            this.pnlTransferencia.Controls.Add(this.iconButton2);
+            this.pnlTransferencia.Controls.Add(this.lblIngresosTotales);
+            this.pnlTransferencia.Location = new System.Drawing.Point(274, 12);
+            this.pnlTransferencia.Name = "pnlTransferencia";
+            this.pnlTransferencia.Size = new System.Drawing.Size(245, 100);
+            this.pnlTransferencia.TabIndex = 90;
+            // 
+            // label6
+            // 
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(34, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 25);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "INGRESOS  TOTALES:";
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton2.BackColor = System.Drawing.Color.YellowGreen;
+            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(-2, 24);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(37, 44);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // lblIngresosTotales
+            // 
+            this.lblIngresosTotales.AutoSize = true;
+            this.lblIngresosTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresosTotales.ForeColor = System.Drawing.Color.White;
+            this.lblIngresosTotales.Location = new System.Drawing.Point(48, 43);
+            this.lblIngresosTotales.Name = "lblIngresosTotales";
+            this.lblIngresosTotales.Size = new System.Drawing.Size(71, 29);
+            this.lblIngresosTotales.TabIndex = 3;
+            this.lblIngresosTotales.Text = "$0,00";
+            // 
+            // chartTopLibros
+            // 
+            this.chartTopLibros.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.chartTopLibros.BorderlineColor = System.Drawing.Color.LightGray;
+            this.chartTopLibros.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.chartTopLibros.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTopLibros.Legends.Add(legend1);
+            this.chartTopLibros.Location = new System.Drawing.Point(145, 199);
+            this.chartTopLibros.Name = "chartTopLibros";
+            this.chartTopLibros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTopLibros.Series.Add(series1);
+            this.chartTopLibros.Size = new System.Drawing.Size(332, 178);
+            this.chartTopLibros.TabIndex = 98;
+            this.chartTopLibros.Text = "chart1";
+            // 
+            // chartPeorLibros
+            // 
+            this.chartPeorLibros.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.chartPeorLibros.BorderlineColor = System.Drawing.Color.LightGray;
+            this.chartPeorLibros.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea2.Name = "ChartArea1";
+            this.chartPeorLibros.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPeorLibros.Legends.Add(legend2);
+            this.chartPeorLibros.Location = new System.Drawing.Point(496, 198);
+            this.chartPeorLibros.Name = "chartPeorLibros";
+            this.chartPeorLibros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPeorLibros.Series.Add(series2);
+            this.chartPeorLibros.Size = new System.Drawing.Size(348, 178);
+            this.chartPeorLibros.TabIndex = 99;
+            this.chartPeorLibros.Text = "chart2";
+            // 
+            // dgvPromociones
+            // 
+            this.dgvPromociones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPromociones.Location = new System.Drawing.Point(857, 225);
+            this.dgvPromociones.Name = "dgvPromociones";
+            this.dgvPromociones.Size = new System.Drawing.Size(312, 151);
+            this.dgvPromociones.TabIndex = 100;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(909, 193);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(245, 25);
+            this.label8.TabIndex = 101;
+            this.label8.Text = "PROMOCIONES   ACTIVAS:";
+          
+            // 
+            // label9
+            // 
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(99, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(294, 25);
+            this.label9.TabIndex = 102;
+            this.label9.Text = "PROMOCIONES MAS UTILIZADAS:";
+         
+            // 
+            // chartPromociones
+            // 
+            this.chartPromociones.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartPromociones.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartPromociones.Legends.Add(legend3);
+            this.chartPromociones.Location = new System.Drawing.Point(349, 0);
+            this.chartPromociones.Name = "chartPromociones";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartPromociones.Series.Add(series3);
+            this.chartPromociones.Size = new System.Drawing.Size(334, 180);
+            this.chartPromociones.TabIndex = 103;
+            this.chartPromociones.Text = "chart1";
+           
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dgvPromocionesUsadas);
+            this.panel2.Controls.Add(this.chartPromociones);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Location = new System.Drawing.Point(145, 386);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(699, 190);
+            this.panel2.TabIndex = 90;
+            // 
+            // dgvPromocionesUsadas
+            // 
+            this.dgvPromocionesUsadas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPromocionesUsadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPromocionesUsadas.Location = new System.Drawing.Point(12, 28);
+            this.dgvPromocionesUsadas.Name = "dgvPromocionesUsadas";
+            this.dgvPromocionesUsadas.Size = new System.Drawing.Size(318, 137);
+            this.dgvPromocionesUsadas.TabIndex = 104;
+            this.dgvPromocionesUsadas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPromocionesUsadas_CellFormatting);
+            // 
+            // dgvVendedores
+            // 
+            this.dgvVendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVendedores.Location = new System.Drawing.Point(860, 385);
+            this.dgvVendedores.Name = "dgvVendedores";
+            this.dgvVendedores.Size = new System.Drawing.Size(312, 190);
+            this.dgvVendedores.TabIndex = 102;
+            // 
+            // timerContadores
+            // 
+            this.timerContadores.Tick += new System.EventHandler(this.timerContadores_Tick);
             // 
             // frmReporteGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1019, 467);
-            this.Controls.Add(this.iconButton5);
-            this.Controls.Add(this.iconButton6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.dvgdata);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.textBusqueda);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker2);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1267, 713);
+            this.Controls.Add(this.dgvVendedores);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dgvPromociones);
+            this.Controls.Add(this.chartPeorLibros);
+            this.Controls.Add(this.chartTopLibros);
+            this.Controls.Add(this.pnlResumen);
+            this.Controls.Add(this.btnAplicarFiltro);
+            this.Controls.Add(this.cmbPeriodo);
+            this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.label4);
             this.Name = "frmReporteGerente";
             this.Text = "frmReporteGerente";
-            ((System.ComponentModel.ISupportInitialize)(this.dvgdata)).EndInit();
+            this.pnlResumen.ResumeLayout(false);
+            this.pnlDebito.ResumeLayout(false);
+            this.pnlDebito.PerformLayout();
+            this.pnlMontoTotal.ResumeLayout(false);
+            this.pnlMontoTotal.PerformLayout();
+            this.pnlEfectivo.ResumeLayout(false);
+            this.pnlEfectivo.PerformLayout();
+            this.pnlTransferencia.ResumeLayout(false);
+            this.pnlTransferencia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTopLibros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPeorLibros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromociones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPromociones)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromocionesUsadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dvgdata;
-        private FontAwesome.Sharp.IconButton btnLimpiar;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox textBusqueda;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imagen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioLibro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.ComboBox cmbPeriodo;
+        private System.Windows.Forms.Button btnAplicarFiltro;
+        private System.Windows.Forms.Panel pnlResumen;
+        private System.Windows.Forms.Panel pnlDebito;
+        private System.Windows.Forms.Label lblMejorVendedor;
+        private System.Windows.Forms.Panel pnlMontoTotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalVentas;
+        private System.Windows.Forms.Panel pnlEfectivo;
+        private System.Windows.Forms.Label lblLibrosVendidos;
+        private System.Windows.Forms.Panel pnlTransferencia;
+        private System.Windows.Forms.Label lblIngresosTotales;
+        private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTopLibros;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPeorLibros;
+        private System.Windows.Forms.DataGridView dgvPromociones;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPromociones;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dgvPromocionesUsadas;
+        private System.Windows.Forms.DataGridView dgvVendedores;
+        private System.Windows.Forms.Timer timerContadores;
     }
 }

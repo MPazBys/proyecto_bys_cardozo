@@ -2,6 +2,7 @@
 using CapaEntidad;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -157,6 +158,16 @@ namespace CapaNegocio
         public bool AnularVenta(int idVenta, out string Mensaje)
         {
             return oCDVenta.AnularVenta(idVenta, out Mensaje);
+        }
+
+        public DataSet ObtenerVentaCompleta(int idVenta)
+        {
+            return oCDVenta.ObtenerVentaCompleta(idVenta);
+        }
+
+        public int ReporteTotalAnuladas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return oCDVenta.ReporteTotalAnuladas(fechaInicio, fechaFin);
         }
     }
 }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblUltimoBackup = new System.Windows.Forms.Label();
             this.lblTotalBackups = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@
             this.chartUsuariosActivos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartUsuariosPorRol = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlMontoTotal = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalLibros = new System.Windows.Forms.Label();
             this.dgvBajoStock = new System.Windows.Forms.DataGridView();
@@ -52,12 +53,13 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.BackColor = System.Drawing.Color.White;
+            this.lblTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(25, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(202, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(570, 137);
+            this.lblTitulo.Size = new System.Drawing.Size(570, 142);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Reportes";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -65,10 +67,10 @@
             // lblUltimoBackup
             // 
             this.lblUltimoBackup.AutoSize = true;
-            this.lblUltimoBackup.BackColor = System.Drawing.Color.White;
+            this.lblUltimoBackup.BackColor = System.Drawing.SystemColors.Control;
             this.lblUltimoBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimoBackup.ForeColor = System.Drawing.Color.Black;
-            this.lblUltimoBackup.Location = new System.Drawing.Point(46, 70);
+            this.lblUltimoBackup.Location = new System.Drawing.Point(223, 70);
             this.lblUltimoBackup.Name = "lblUltimoBackup";
             this.lblUltimoBackup.Size = new System.Drawing.Size(14, 16);
             this.lblUltimoBackup.TabIndex = 1;
@@ -77,10 +79,10 @@
             // lblTotalBackups
             // 
             this.lblTotalBackups.AutoSize = true;
-            this.lblTotalBackups.BackColor = System.Drawing.Color.White;
+            this.lblTotalBackups.BackColor = System.Drawing.SystemColors.Control;
             this.lblTotalBackups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBackups.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalBackups.Location = new System.Drawing.Point(46, 100);
+            this.lblTotalBackups.Location = new System.Drawing.Point(223, 100);
             this.lblTotalBackups.Name = "lblTotalBackups";
             this.lblTotalBackups.Size = new System.Drawing.Size(14, 16);
             this.lblTotalBackups.TabIndex = 2;
@@ -89,10 +91,10 @@
             // lblAlertaBackup
             // 
             this.lblAlertaBackup.AutoSize = true;
-            this.lblAlertaBackup.BackColor = System.Drawing.Color.White;
+            this.lblAlertaBackup.BackColor = System.Drawing.SystemColors.Control;
             this.lblAlertaBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlertaBackup.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblAlertaBackup.Location = new System.Drawing.Point(46, 130);
+            this.lblAlertaBackup.Location = new System.Drawing.Point(223, 130);
             this.lblAlertaBackup.Name = "lblAlertaBackup";
             this.lblAlertaBackup.Size = new System.Drawing.Size(15, 16);
             this.lblAlertaBackup.TabIndex = 3;
@@ -100,85 +102,108 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend1);
-            this.chartUsuariosActivos.Location = new System.Drawing.Point(25, 153);
+            this.chartUsuariosActivos.BorderlineColor = System.Drawing.SystemColors.Control;
+            chartArea5.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend5);
+            this.chartUsuariosActivos.Location = new System.Drawing.Point(202, 154);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
             this.chartUsuariosActivos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series5);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(402, 243);
             this.chartUsuariosActivos.TabIndex = 4;
             this.chartUsuariosActivos.Text = "chart1";
             // 
             // chartUsuariosPorRol
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartUsuariosPorRol.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartUsuariosPorRol.Legends.Add(legend2);
-            this.chartUsuariosPorRol.Location = new System.Drawing.Point(433, 153);
+            this.chartUsuariosPorRol.BackColor = System.Drawing.SystemColors.Control;
+            chartArea6.Name = "ChartArea1";
+            this.chartUsuariosPorRol.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartUsuariosPorRol.Legends.Add(legend6);
+            this.chartUsuariosPorRol.Location = new System.Drawing.Point(610, 154);
             this.chartUsuariosPorRol.Name = "chartUsuariosPorRol";
             this.chartUsuariosPorRol.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartUsuariosPorRol.Series.Add(series2);
-            this.chartUsuariosPorRol.Size = new System.Drawing.Size(412, 243);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartUsuariosPorRol.Series.Add(series6);
+            this.chartUsuariosPorRol.Size = new System.Drawing.Size(426, 243);
             this.chartUsuariosPorRol.TabIndex = 5;
             this.chartUsuariosPorRol.Text = "chart1";
             // 
             // pnlMontoTotal
             // 
-            this.pnlMontoTotal.BackColor = System.Drawing.Color.Thistle;
+            this.pnlMontoTotal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pnlMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMontoTotal.Controls.Add(this.iconButton1);
             this.pnlMontoTotal.Controls.Add(this.label3);
             this.pnlMontoTotal.Controls.Add(this.lblTotalLibros);
-            this.pnlMontoTotal.Location = new System.Drawing.Point(601, 9);
+            this.pnlMontoTotal.Location = new System.Drawing.Point(778, 9);
             this.pnlMontoTotal.Name = "pnlMontoTotal";
-            this.pnlMontoTotal.Size = new System.Drawing.Size(241, 137);
+            this.pnlMontoTotal.Size = new System.Drawing.Size(258, 142);
             this.pnlMontoTotal.TabIndex = 90;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.iconButton1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconButton1.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(3, 35);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(69, 65);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 21);
+            this.label3.Location = new System.Drawing.Point(78, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 53);
             this.label3.TabIndex = 1;
             this.label3.Text = "TOTAL    LIBROS     REGISTRADOS :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblTotalLibros
             // 
             this.lblTotalLibros.AutoSize = true;
             this.lblTotalLibros.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalLibros.Location = new System.Drawing.Point(104, 74);
+            this.lblTotalLibros.Location = new System.Drawing.Point(132, 79);
             this.lblTotalLibros.Name = "lblTotalLibros";
             this.lblTotalLibros.Size = new System.Drawing.Size(24, 28);
             this.lblTotalLibros.TabIndex = 0;
             this.lblTotalLibros.Text = "0";
-            this.lblTotalLibros.Click += new System.EventHandler(this.lblTotalLibros_Click);
             // 
             // dgvBajoStock
             // 
+            this.dgvBajoStock.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvBajoStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvBajoStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBajoStock.Location = new System.Drawing.Point(25, 402);
+            this.dgvBajoStock.Location = new System.Drawing.Point(202, 404);
             this.dgvBajoStock.Name = "dgvBajoStock";
-            this.dgvBajoStock.Size = new System.Drawing.Size(820, 125);
+            this.dgvBajoStock.Size = new System.Drawing.Size(834, 163);
             this.dgvBajoStock.TabIndex = 91;
             // 
             // frmReporteAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1095, 606);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1264, 606);
             this.Controls.Add(this.dgvBajoStock);
             this.Controls.Add(this.pnlMontoTotal);
             this.Controls.Add(this.chartUsuariosPorRol);
@@ -212,5 +237,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTotalLibros;
         private System.Windows.Forms.DataGridView dgvBajoStock;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
