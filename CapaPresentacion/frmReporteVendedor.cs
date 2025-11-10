@@ -1,4 +1,6 @@
 ﻿using CapaEntidad;
+
+using CapaNegocio;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -48,7 +50,7 @@ namespace CapaPresentacion
             cmbPeriodo.SelectedIndex = 0; // Por defecto "Hoy"
             ActualizarFechasPorPeriodo(cmbPeriodo.SelectedItem.ToString());
 
-            CargarTop5Clientes();
+         
 
 
         }
@@ -112,6 +114,7 @@ namespace CapaPresentacion
             }
 
             CargarReporte();
+            CargarReporteTopClientes();
 
         }
 
@@ -186,6 +189,7 @@ namespace CapaPresentacion
                     cmdAnuladas.CommandType = CommandType.StoredProcedure;
                     cmdAnuladas.Parameters.AddWithValue("@Fecha_inicio", fechaInicio);
                     cmdAnuladas.Parameters.AddWithValue("@Fecha_fin", fechaFin);
+                    cmdAnuladas.Parameters.AddWithValue("@IdUsuario", _usuarioLogueado?.id_usuario ?? (object)DBNull.Value);
 
                     // Usamos ExecuteScalar porque solo devuelve un número
                     object resultado = cmdAnuladas.ExecuteScalar();
@@ -315,35 +319,31 @@ namespace CapaPresentacion
             }
         }
 
-        private void CargarTop5Clientes()
+        private void CargarReporteTopClientes()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
+           
+            DateTime fechaInicio = dtpFechaInicio.Value.Date;
+            DateTime fechaFin = dtpFechaFin.Value.Date;
 
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand("sp_Top5ClientesFrecuentes", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+            CN_ReporteAdmin cn_reportes = new CN_ReporteAdmin();
+            DataTable dt = cn_reportes.ReporteTop5Clientes(fechaInicio, fechaFin);
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+            // 2. Asignamos los datos a la grilla
+            // (Asumo que tu grilla se llama dgvTopClientes)
+            dgvTopClientes.DataSource = dt;
 
-                // Mostrar en DataGridView 
-                dgvTopClientes.DataSource = dt;
-                EstilizarGridTopClientes();
-            }
-
-
+            // 3. Llamamos al método de estilo
+            EstilizarGridTopClientes();
         }
 
         // (Asegúrate de tener "using System.Drawing;" al inicio)
 
         private void EstilizarGridTopClientes()
         {
-            // --- 1. APARIENCIA GENERAL (Estilo "Bajo Stock") ---
+            // --- Estilo General (fondo, líneas, etc.) ---
             dgvTopClientes.BorderStyle = BorderStyle.None;
             dgvTopClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvTopClientes.GridColor = Color.FromArgb(235, 235, 235); // Línea suave
+            dgvTopClientes.GridColor = Color.FromArgb(235, 235, 235);
             dgvTopClientes.AllowUserToAddRows = false;
             dgvTopClientes.AllowUserToDeleteRows = false;
             dgvTopClientes.ReadOnly = true;
@@ -352,56 +352,55 @@ namespace CapaPresentacion
             dgvTopClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTopClientes.RowTemplate.Height = 30;
 
-            // --- 2. ESTILO DE ENCABEZADOS ---
+            // --- Estilo de Encabezados (Headers) ---
             dgvTopClientes.EnableHeadersVisualStyles = false;
             dgvTopClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvTopClientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
             dgvTopClientes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             dgvTopClientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(60, 60, 60);
-            dgvTopClientes.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvTopClientes.ColumnHeadersHeight = 35;
 
-            // --- 3. ESTILO DE FILAS ---
+            // --- Estilo de Filas ---
             dgvTopClientes.RowsDefaultCellStyle.BackColor = Color.White;
             dgvTopClientes.RowsDefaultCellStyle.Font = new Font("Segoe UI", 9F);
             dgvTopClientes.RowsDefaultCellStyle.ForeColor = Color.DimGray;
             dgvTopClientes.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(235, 243, 250);
             dgvTopClientes.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
 
-            // --- 4. AJUSTE DE COLUMNAS ---
+            // --- Ajuste de Columnas (basado en tu SP) ---
             if (dgvTopClientes.Columns["id_cliente"] != null)
-                dgvTopClientes.Columns["id_cliente"].Visible = false; // Ocultamos el ID
+                dgvTopClientes.Columns["id_cliente"].Visible = false; // Oculto
 
             if (dgvTopClientes.Columns["Cliente"] != null)
                 dgvTopClientes.Columns["Cliente"].FillWeight = 40; // 40%
 
-            if (dgvTopClientes.Columns["Cantidad_Compras"] != null)
+            if (dgvTopClientes.Columns["CantidadCompras"] != null)
             {
-                dgvTopClientes.Columns["Cantidad_Compras"].HeaderText = "Compras";
-                dgvTopClientes.Columns["Cantidad_Compras"].FillWeight = 25; // 25%
-                dgvTopClientes.Columns["Cantidad_Compras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvTopClientes.Columns["Cantidad_Compras"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvTopClientes.Columns["CantidadCompras"].HeaderText = "Compras";
+                dgvTopClientes.Columns["CantidadCompras"].FillWeight = 25;
+                dgvTopClientes.Columns["CantidadCompras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvTopClientes.Columns["CantidadCompras"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
-            if (dgvTopClientes.Columns["Promedio_Gasto"] != null)
+            if (dgvTopClientes.Columns["PromedioGasto"] != null)
             {
-                dgvTopClientes.Columns["Promedio_Gasto"].HeaderText = "Gasto Promedio";
-                dgvTopClientes.Columns["Promedio_Gasto"].FillWeight = 35; // 35%
-                dgvTopClientes.Columns["Promedio_Gasto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvTopClientes.Columns["Promedio_Gasto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvTopClientes.Columns["PromedioGasto"].HeaderText = "Gasto Promedio";
+                dgvTopClientes.Columns["PromedioGasto"].FillWeight = 35;
+                dgvTopClientes.Columns["PromedioGasto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvTopClientes.Columns["PromedioGasto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
 
-            // --- 5. CONECTAR EVENTO DE FORMATO (Para el "$") ---
+            // --- Conectamos el evento para formatear el dinero ---
             dgvTopClientes.CellFormatting -= dgvTopClientes_CellFormatting;
             dgvTopClientes.CellFormatting += dgvTopClientes_CellFormatting;
         }
 
-        // (Asegúrate de tener "using System.Globalization;" al inicio)
 
+        // MÉTODO 3: El que formatea el dinero (el "$")
         private void dgvTopClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Solo nos interesa la columna "PromedioGasto"
-            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvTopClientes.Columns[e.ColumnIndex].Name != "Promedio_Gasto")
+            if (e.ColumnIndex < 0 || e.RowIndex < 0 || dgvTopClientes.Columns[e.ColumnIndex].Name != "PromedioGasto")
             {
                 return;
             }

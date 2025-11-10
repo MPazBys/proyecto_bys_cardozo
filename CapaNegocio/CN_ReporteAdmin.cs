@@ -15,5 +15,16 @@ namespace CapaNegocio
         public DataTable ObtenerBackupsDelMes() => datos.BackupsDelMes();
         public DataTable ObtenerUsuariosActivosInactivos() => datos.UsuariosActivosInactivos();
         public DataTable ObtenerUsuariosPorRol() => datos.UsuariosPorRol();
+
+
+        
+
+        public DataTable ReporteTop5Clientes(DateTime fechaInicio, DateTime fechaFin)
+        {
+        
+            return datos.ReporteTop5Clientes(fechaInicio, fechaFin);
+        }
     }
+
+
 }

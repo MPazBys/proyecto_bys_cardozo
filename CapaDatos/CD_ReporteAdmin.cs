@@ -68,5 +68,29 @@ namespace CapaDatos
                 return dt;
             }
         }
+
+        public DataTable ReporteTop5Clientes(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteTop5Clientes", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // --- ¡AÑADE ESTAS DOS LÍNEAS! ---
+                    cmd.Parameters.AddWithValue("@Fecha_inicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("@Fecha_fin", fechaFin);
+                    // --- FIN DE LA SOLUCIÓN ---
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
+            }
+            return dt;
+        }
     }
 }
